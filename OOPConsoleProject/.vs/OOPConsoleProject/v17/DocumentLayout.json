@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\selectscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\selectscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\villainmonsters\\villainmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:villainmonsters\\villainmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,8 +29,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "DockedWidth": 226,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,15 +70,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "VillainMonster.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\VillainMonsters\\VillainMonster.cs",
+              "RelativeDocumentMoniker": "VillainMonsters\\VillainMonster.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\VillainMonsters\\VillainMonster.cs",
+              "RelativeToolTip": "VillainMonsters\\VillainMonster.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T05:27:03.765Z",
+              "WhenOpened": "2024-08-12T13:12:04.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SelectScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\SelectScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\SelectScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\SelectScene.cs",
+              "RelativeToolTip": "Scenes\\SelectScene.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T12:28:41.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Enums.cs",
+              "RelativeDocumentMoniker": "Enums.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Enums.cs",
+              "RelativeToolTip": "Enums.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAgwAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T11:56:42.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TitleScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\TitleScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\TitleScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\TitleScene.cs",
+              "RelativeToolTip": "Scenes\\TitleScene.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T11:33:32.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BattleScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\BattleScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
+              "RelativeToolTip": "Scenes\\BattleScene.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAwwE4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T11:23:25.611Z",
               "EditorCaption": ""
             }
           ]
