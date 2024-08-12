@@ -54,7 +54,8 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Map1] = new MapScene1(this);
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this);
-            scenes[(int)SceneType.Shop] = new ShopScene(this);           
+            scenes[(int)SceneType.Shop] = new ShopScene(this);
+            scenes[(int)SceneType.GameOver] = new GameOverScene(this)
 
             curScene = scenes[(int)SceneType.Title];
             curScene.Enter();

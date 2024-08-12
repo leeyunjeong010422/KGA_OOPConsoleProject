@@ -10,21 +10,33 @@ namespace OOPConsoleProject.Players
         protected Job job;
         public Job Job { get { return job; } }
 
-
-        //protected JiuPoketMonster JiuPoketMonster;
-        //public JiuPoketMonster jiuPoketMonster { get {  return jiuPoketMonster; } }
-
         protected int curHP;
-        public int CurHP { get { return curHP; } }
+        public int CurHP
+        {
+            get { return curHP; }
+            set { curHP = value; } 
+        }
 
         protected int maxHP;
-        public int MaxHP { get { return maxHP; } }
+        public int MaxHP
+        {
+            get { return maxHP; }
+            set { maxHP = value; } 
+        }
 
         protected int attack;
-        public int Attack { get { return attack; } }
+        public int Attack
+        {
+            get { return attack; }
+            set { attack = value; } 
+        }
 
         protected int defense;
-        public int Defense { get { return defense; } }
+        public int Defense
+        {
+            get { return defense; }
+            set { defense = value; } 
+        }
 
         protected int gold;
         public int Gold { get { return gold; } set { gold = value; } }
