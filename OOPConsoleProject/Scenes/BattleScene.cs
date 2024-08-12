@@ -4,12 +4,12 @@ namespace OOPConsoleProject.Scenes
 {
     public class BattleScene : Scene
     {
-        public enum State { Choice, Attack, Escape, PoketMonsterSelection }
+        public enum State { Choice, Attack, Escape }
         private State curState;
 
         private string input;
-        private string nameInput;
-        private Job currentJob;
+        private string nameInput;       
+
         private VillainMonster currentMonster;
         private Random random;
         public BattleScene(Game game) : base(game)
@@ -44,11 +44,6 @@ namespace OOPConsoleProject.Scenes
             if (curState == State.Choice)
             {
                 Console.Write("무엇을 하시겠습니까? [1. 공격, 2. 도망]: ");
-            }           
-            else if (curState == State.PoketMonsterSelection)
-            {
-                DisplayPoketMonsters(currentJob);
-                Console.Write("포켓몬 번호 입력: ");
             }
             else if (curState == State.Attack)
             {
@@ -69,14 +64,6 @@ namespace OOPConsoleProject.Scenes
                     return;
 
                 nameInput = input;
-                curState = State.PoketMonsterSelection;
-            }
-            else if (curState == State.PoketMonsterSelection)
-            {
-                if (int.TryParse(input, out int selectedMonsterIndex))
-                {
-                    HandleMonsterSelection(selectedMonsterIndex);
-                }
             }
         }
 
@@ -98,44 +85,6 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("===================");
         }
 
-        private void DisplayPoketMonsters(Job job)
-        {
-            Console.WriteLine("선택한 직업에 따른 포켓몬 목록:");
-
-            switch (job)
-            {
-                case Job.HanJiu:
-                    foreach (var monster in Enum.GetValues(typeof(JiuPoketMonster)))
-                    {
-                        Console.WriteLine(monster);
-                    }
-                    break;
-                case Job.ChoeIseul:
-                    foreach (var monster in Enum.GetValues(typeof(IseulPoketMonster)))
-                    {
-                        Console.WriteLine(monster);
-                    }
-                    break;
-                case Job.UNG:
-                    foreach (var monster in Enum.GetValues(typeof(UngPoketMonster)))
-                    {
-                        Console.WriteLine(monster);
-                    }
-                    break;
-                case Job.BOM:
-                    foreach (var monster in Enum.GetValues(typeof(BomPoketMonster)))
-                    {
-                        Console.WriteLine(monster);
-                    }
-                    break;
-            }
-        }
-
-        private void HandleMonsterSelection(int monsterIndex)
-        {
-            // 선택된 포켓몬에 대한 처리 로직을 여기에 작성합니다.
-            Console.WriteLine($"선택한 포켓몬 번호: {monsterIndex}");
-            // 선택된 포켓몬으로 전투 진행 등 추가 로직을 작성합니다.
-        }
+        
     }
 }

@@ -10,8 +10,9 @@ namespace OOPConsoleProject.Scenes
 {
     public class SelectScene : Scene
     {
-        public enum State { Name, Job, Confirm }
+        public enum State { Name, Job, PoketMonsterSelection, Confirm }
         private State curState;
+        private Job currentJob;
 
         private string input;
         private string nameInput;
@@ -52,18 +53,25 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("4. 봄이");
                 Console.Write("입력해주세요: ");
             }
+            else if (curState == State.PoketMonsterSelection)
+            {
+                DisplayPoketMonsters(currentJob);
+                Console.Write("포켓몬 번호 입력: ");
+            }
+
             else if (curState == State.Confirm)
             {
                 Console.WriteLine("===================");
                 Console.WriteLine($"이름 : {game.Player.Name}");
                 Console.WriteLine($"직업 : {game.Player.Job}");
+                //Console.WriteLine($"포켓몬 : {}");
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
                 Console.WriteLine($"소지금 : {game.Player.Gold}");
                 Console.WriteLine("===================");
                 Console.WriteLine();
-                Console.Write("이대로 플레이 하시겠습니까? [네(y) | 아니오(n)]");
+                Console.Write("이대로 플레이 하시겠습니까? [네(y) | 아니오(n)]: ");
             }
         }
 
@@ -79,31 +87,32 @@ namespace OOPConsoleProject.Scenes
             }
             else if (curState == State.Job)
             {
-                if (Job.TryParse(input, out Job select) == false)
-                    return;
-
-                if (Enum.IsDefined(typeof(Job), select) == false)
-                    return;
-
-                switch (select)
+                if (int.TryParse(input, out int jobIndex) && Enum.IsDefined(typeof(Job), jobIndex))
                 {
-
-                    case Job.HanJiu:
-                        game.Player = new HanJiu(nameInput);
-                        break;
-                    case Job.ChoeIseul:
-                        game.Player = new ChoeIseul(nameInput);
-                        break;
-                    case Job.UNG:
-                        game.Player = new UNG(nameInput);
-                        break;
-                    case Job.BOM:
-                        game.Player = new BOM(nameInput);
-                        break;
+                    currentJob = (Job)jobIndex;
+                    switch (currentJob)
+                    {
+                        case Job.HanJiu:
+                            game.Player = new HanJiu(nameInput);
+                            break;
+                        case Job.ChoeIseul:
+                            game.Player = new ChoeIseul(nameInput);
+                            break;
+                        case Job.UNG:
+                            game.Player = new UNG(nameInput);
+                            break;
+                        case Job.BOM:
+                            game.Player = new BOM(nameInput);
+                            break;
+                    }
+                    curState = State.PoketMonsterSelection;
                 }
-
+            }
+            else if(curState == State.PoketMonsterSelection)
+            {
                 curState = State.Confirm;
             }
+
             else if (curState == State.Confirm)
             {
                 switch (input)
@@ -122,6 +131,41 @@ namespace OOPConsoleProject.Scenes
                         break;
                 }
             }
+        }
+
+        private void DisplayPoketMonsters(Job job)
+        {
+            Console.WriteLine($"<선택한 직업[{game.Player.Job}]에 따른 포켓몬 목록>");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            switch (job)
+            {
+                case Job.HanJiu:
+                    foreach (var monster in Enum.GetValues(typeof(JiuPoketMonster)))
+                    {
+                        Console.WriteLine(monster);
+                    }
+                    break;
+                case Job.ChoeIseul:
+                    foreach (var monster in Enum.GetValues(typeof(IseulPoketMonster)))
+                    {
+                        Console.WriteLine(monster);
+                    }
+                    break;
+                case Job.UNG:
+                    foreach (var monster in Enum.GetValues(typeof(UngPoketMonster)))
+                    {
+                        Console.WriteLine(monster);
+                    }
+                    break;
+                case Job.BOM:
+                    foreach (var monster in Enum.GetValues(typeof(BomPoketMonster)))
+                    {
+                        Console.WriteLine(monster);
+                    }
+                    break;
+                    
+            }
+            Console.ResetColor();
         }
     }
 }

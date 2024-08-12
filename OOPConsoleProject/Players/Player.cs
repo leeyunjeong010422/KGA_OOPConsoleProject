@@ -10,6 +10,10 @@ namespace OOPConsoleProject.Players
         protected Job job;
         public Job Job { get { return job; } }
 
+
+        //protected JiuPoketMonster JiuPoketMonster;
+        //public JiuPoketMonster jiuPoketMonster { get {  return jiuPoketMonster; } }
+
         protected int curHP;
         public int CurHP { get { return curHP; } }
 
