@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleProject.Players;
+﻿using OOPConsoleProject.Players;
+using OOPConsoleProject.PoketMonsters;
 using OOPConsoleProject.Scenes;
 
 namespace OOPConsoleProject
@@ -18,6 +14,14 @@ namespace OOPConsoleProject
 
         private Player player;
         public Player Player { get { return player; } set { player = value; } }
+
+        private PoketMonster poketMonster;
+        public PoketMonster PoketMonster { get { return poketMonster; } set { poketMonster = value; } }
+
+        public Game()
+        {
+            PoketMonster = new PoketMonster();
+        }
 
         public void Run()
         {
@@ -55,7 +59,7 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this);
             scenes[(int)SceneType.Shop] = new ShopScene(this);
-            scenes[(int)SceneType.GameOver] = new GameOverScene(this)
+            scenes[(int)SceneType.GameOver] = new GameOverScene(this);
 
             curScene = scenes[(int)SceneType.Title];
             curScene.Enter();

@@ -63,12 +63,11 @@ namespace OOPConsoleProject.Scenes
 
         public override void Exit()
         {
-            // 씬 종료 시 필요한 로직 (예: 리소스 해제 등)
+            
         }
 
         public override void Input()
-        {
-            // 플레이어의 이동 입력 처리
+        {           
             var key = Console.ReadKey(true).Key;
             Move(key);
         }
@@ -80,8 +79,8 @@ namespace OOPConsoleProject.Scenes
             {
                 for (int j = 0; j < maze.GetLength(1); j++)
                 {
-                    if (i == playerY && j == playerX) // y, x 순서로 비교
-                        Console.Write("P "); // 플레이어 위치 표시
+                    if (i == playerY && j == playerX)
+                        Console.Write("P ");
                     else
                         Console.Write(maze[i, j] + " ");
                 }
@@ -91,8 +90,6 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
-            // 현재 씬에서 필요한 업데이트 로직
-            // 예: 몬스터와의 충돌 체크
             CheckForMonster();
             CheckForGoal();
         }
@@ -162,7 +159,6 @@ namespace OOPConsoleProject.Scenes
 
         private bool IsValidMove(int x, int y)
         {
-            // 미로의 경계를 체크하고 벽이 아닌지 확인
             if (y >= 0 && y < maze.GetLength(0) && x >= 0 && x < maze.GetLength(1) && maze[y, x] == ' ')
             {
                 return true;
@@ -172,12 +168,11 @@ namespace OOPConsoleProject.Scenes
 
         private void CheckForMonster()
         {
-            // 몬스터가 있는 위치를 확인
             foreach (var monster in monsters)
             {
-                if (playerX == monster.x && playerY == monster.y) // 몬스터가 있는 위치 확인
+                if (playerX == monster.x && playerY == monster.y) 
                 {
-                    game.ChangeScene(SceneType.Battle); // BattleScene으로 이동
+                    game.ChangeScene(SceneType.Battle); 
                     break;
                 }
             }

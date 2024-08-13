@@ -12,18 +12,13 @@ namespace OOPConsoleProject.Players
         public BOM(string name)
         {
             this.name = name;
-            this.job = Job.BOM;
+            this.job = Job.봄이;
             this.maxHP = 100;
             this.curHP = maxHP;
             this.attack = 50;
             this.defense = 50;
             this.gold = 10000;
-        }
-
-        public override void Skill(VillainMonster monster)
-        {
-
-        }
+        }        
     }
 }
 

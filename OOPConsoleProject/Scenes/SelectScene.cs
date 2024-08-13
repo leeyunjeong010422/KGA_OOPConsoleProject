@@ -13,6 +13,7 @@ namespace OOPConsoleProject.Scenes
         public enum State { Name, Job, PoketMonsterSelection, Confirm }
         private State curState;
         private Job currentJob;
+        public static object selectedPoketMonster;
 
         private string input;
         private string nameInput;
@@ -46,32 +47,34 @@ namespace OOPConsoleProject.Scenes
             }
             else if (curState == State.Job)
             {
-                Console.WriteLine("직업을 선택하세요.");
+                Console.WriteLine("캐릭터를 선택하세요.");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("1. 한지우");
                 Console.WriteLine("2. 최이슬");
                 Console.WriteLine("3. 웅이");
                 Console.WriteLine("4. 봄이");
+                Console.ResetColor();
                 Console.Write("입력해주세요: ");
             }
             else if (curState == State.PoketMonsterSelection)
             {
                 DisplayPoketMonsters(currentJob);
-                Console.Write("포켓몬 번호 입력: ");
+                Console.Write("플레이할 포켓몬 번호 입력: ");                
             }
 
             else if (curState == State.Confirm)
             {
                 Console.WriteLine("===================");
                 Console.WriteLine($"이름 : {game.Player.Name}");
-                Console.WriteLine($"직업 : {game.Player.Job}");
-                //Console.WriteLine($"포켓몬 : {}");
+                Console.WriteLine($"캐릭터 : {game.Player.Job}");
+                Console.WriteLine($"포켓몬 : {selectedPoketMonster}");
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
                 Console.WriteLine($"소지금 : {game.Player.Gold}");
                 Console.WriteLine("===================");
                 Console.WriteLine();
-                Console.Write("이대로 플레이 하시겠습니까? [네(y) | 아니오(n)]: ");
+                Console.Write("이대로 플레이 하시겠습니까? [네(Y) | 아니오(N)]: ");
             }
         }
 
@@ -92,16 +95,16 @@ namespace OOPConsoleProject.Scenes
                     currentJob = (Job)jobIndex;
                     switch (currentJob)
                     {
-                        case Job.HanJiu:
+                        case Job.한지우:
                             game.Player = new HanJiu(nameInput);
                             break;
-                        case Job.ChoeIseul:
+                        case Job.최이슬:
                             game.Player = new ChoeIseul(nameInput);
                             break;
-                        case Job.UNG:
+                        case Job.웅이:
                             game.Player = new UNG(nameInput);
                             break;
-                        case Job.BOM:
+                        case Job.봄이:
                             game.Player = new BOM(nameInput);
                             break;
                     }
@@ -110,7 +113,14 @@ namespace OOPConsoleProject.Scenes
             }
             else if(curState == State.PoketMonsterSelection)
             {
-                curState = State.Confirm;
+                if (int.TryParse(input, out int monsterIndex))
+                {
+                    if (monsterIndex >= 1 && monsterIndex <= 3)
+                    {
+                        selectedPoketMonster = GetPoketMonster(currentJob, monsterIndex);
+                        curState = State.Confirm;
+                    }
+                }
             }
 
             else if (curState == State.Confirm)
@@ -133,34 +143,51 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
+        private object GetPoketMonster(Job job, int monsterIndex)
+        {
+            switch (job)
+            {
+                case Job.한지우:
+                    return (JiuPoketMonster)monsterIndex; 
+                case Job.최이슬:
+                    return (IseulPoketMonster)monsterIndex; 
+                case Job.웅이:
+                    return (UngPoketMonster)monsterIndex; 
+                case Job.봄이:
+                    return (BomPoketMonster)monsterIndex; 
+                default:
+                    return null;
+            }
+        }
+
         private void DisplayPoketMonsters(Job job)
         {
-            Console.WriteLine($"<선택한 직업[{game.Player.Job}]에 따른 포켓몬 목록>");
+            Console.WriteLine($"<선택한 캐릭터[{game.Player.Job}]에 따른 포켓몬 목록>");
             Console.ForegroundColor = ConsoleColor.Yellow;
             switch (job)
             {
-                case Job.HanJiu:
+                case Job.한지우:
                     foreach (var monster in Enum.GetValues(typeof(JiuPoketMonster)))
                     {
-                        Console.WriteLine(monster);
+                        Console.WriteLine($"{(int)monster}. {monster}");
                     }
                     break;
-                case Job.ChoeIseul:
+                case Job.최이슬:
                     foreach (var monster in Enum.GetValues(typeof(IseulPoketMonster)))
                     {
-                        Console.WriteLine(monster);
+                        Console.WriteLine($"{(int)monster}. {monster}");
                     }
                     break;
-                case Job.UNG:
+                case Job.웅이:
                     foreach (var monster in Enum.GetValues(typeof(UngPoketMonster)))
                     {
-                        Console.WriteLine(monster);
+                        Console.WriteLine($"{(int)monster}. {monster}");
                     }
                     break;
-                case Job.BOM:
+                case Job.봄이:
                     foreach (var monster in Enum.GetValues(typeof(BomPoketMonster)))
                     {
-                        Console.WriteLine(monster);
+                        Console.WriteLine($"{(int)monster}. {monster}");
                     }
                     break;
                     

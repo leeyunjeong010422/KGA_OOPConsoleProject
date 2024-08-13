@@ -40,14 +40,13 @@ namespace OOPConsoleProject.Players
 
         protected int gold;
         public int Gold { get { return gold; } set { gold = value; } }
-
-        public abstract void Skill(VillainMonster monster);
+       
 
         public void ShowInfo()
         {
             Console.SetCursorPosition(0, 20);
             Console.WriteLine("==========================================");
-            Console.WriteLine($" 이름 : {name,-6} 직업 : {job,-6}");
+            Console.WriteLine($" 이름 : {name,-6} 캐릭터 : {job,-6}");
             Console.WriteLine($" 체력 : {curHP,+3} / {maxHP}  공격 : {attack,-3} / 방어 : {defense,-3}");
             Console.WriteLine($" 골드 : {gold,+5} G");
             Console.WriteLine("==========================================");

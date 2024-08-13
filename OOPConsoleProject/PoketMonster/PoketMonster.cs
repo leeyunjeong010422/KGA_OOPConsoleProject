@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleProject.PoketMonster
+﻿namespace OOPConsoleProject.PoketMonsters
 {
     public class PoketMonster
     {
+        protected int attack = 30;
+        public int Attack
+        {
+            get { return attack; }
+            set { attack = value; }
+        }
 
     }
+
+
 }
+
