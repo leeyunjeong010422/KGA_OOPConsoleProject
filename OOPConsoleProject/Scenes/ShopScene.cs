@@ -119,7 +119,7 @@ namespace OOPConsoleProject.Scenes
                 Item potion = ItemFactory.Instantiate(potionName);
                 if (potion != null)
                 {
-                    player.Gold -= price; 
+                    player.Gold -= price;      
                     player.AddItemToInventory(potion); 
                     Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");  
                     Thread.Sleep(2000);
