@@ -5,7 +5,7 @@ namespace OOPConsoleProject.Scenes
 {
     public class BattleScene : Scene
     {
-        public enum State { Choice, CharAttack, PoketAttack, Escape, Exit }
+        public enum State { Choice, CharAttack, PoketAttack, Escape}
         private State curState;
 
         private string input;
@@ -26,7 +26,7 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             Console.WriteLine($"{currentMonster.name}을 마주쳤습니다!");
             DisplayRandomMonster();
-            Console.WriteLine("전투가 시작됩니다! 잠시만 기다려주세요...");
+            Console.WriteLine("전투가 시작됩니다! 잠시만 기다려주세요");
             Thread.Sleep(3000);
             curState = State.Choice;
 

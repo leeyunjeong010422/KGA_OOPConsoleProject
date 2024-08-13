@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,10 +18,12 @@ namespace OOPConsoleProject.Scenes
 
         private string input;
         private string nameInput;
+        private Player player;
 
-        public SelectScene(Game game) : base(game)
+        public SelectScene(Game game, Player player) : base(game)
         {
-
+            this.game = game;
+            this.player = player;
         }
 
         public override void Enter()
@@ -71,7 +74,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
-                Console.WriteLine($"소지금 : {game.Player.Gold}");
+                Console.WriteLine($"소지금 : {player.Gold}");
                 Console.WriteLine("===================");
                 Console.WriteLine();
                 Console.Write("이대로 플레이 하시겠습니까? [네(Y) | 아니오(N)]: ");

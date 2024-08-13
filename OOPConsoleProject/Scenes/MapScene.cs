@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using OOPConsoleProject.Players;
 
 namespace OOPConsoleProject.Scenes
 {
@@ -17,14 +16,17 @@ namespace OOPConsoleProject.Scenes
 
         private List<(int x, int y)> monsters;
         private List<(int x, int y)> goal;
+        private Player player;
 
-        public MapScene(Game game) : base(game)
+        public MapScene(Game game, Player player) : base(game)
         {
             InitializeMaze();
             InitializeMonsters();
             InitializeGoal();
-            playerX = 1; 
-            playerY = 1; 
+            playerX = 1;
+            playerY = 1;
+            this.game = game;
+            this.player = player;
         }
 
         private void InitializeMaze()
@@ -40,7 +42,7 @@ namespace OOPConsoleProject.Scenes
         }
 
         private void InitializeMonsters()
-        {           
+        {
             monsters = new List<(int x, int y)>
             {
                 (3, 2)
@@ -63,19 +65,23 @@ namespace OOPConsoleProject.Scenes
 
         public override void Exit()
         {
-            
+
         }
 
         public override void Input()
-        {           
+        {
             var key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.D1)
             {
-                game.ChangeScene(SceneType.Shop); 
+                game.ChangeScene(SceneType.Shop);
             }
-            else if (key == ConsoleKey.D2) 
+            else if (key == ConsoleKey.D2)
             {
                 game.ChangeScene(SceneType.Inventory);
+            }
+            else if (key == ConsoleKey.D0)
+            {
+                //UsePotion();
             }
             else
             {
@@ -86,10 +92,6 @@ namespace OOPConsoleProject.Scenes
         public override void Render()
         {
             Console.Clear();
-            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
-            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
-            Console.WriteLine();
-
             Console.WriteLine("===================");
             Console.WriteLine($"이름 : {game.Player.Name}");
             Console.WriteLine($"캐릭터 : {game.Player.Job}");
@@ -97,16 +99,21 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine($"체력 : {game.Player.CurHP}");
             Console.WriteLine($"공격 : {game.Player.Attack}");
             Console.WriteLine($"방어 : {game.Player.Defense}");
-            Console.WriteLine($"소지금 : {game.Player.Gold}");
+            Console.WriteLine($"소지금 : {player.Gold}");
             Console.WriteLine("===================");
 
+            Console.WriteLine();
+
+            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
+            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
+            Console.WriteLine("[ 0번: 포션 먹기 ]");
             Console.WriteLine();
 
 
             for (int i = 0; i < maze.GetLength(0); i++)
             {
                 for (int j = 0; j < maze.GetLength(1); j++)
-                {                    
+                {
                     if (i == playerY && j == playerX)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -202,9 +209,9 @@ namespace OOPConsoleProject.Scenes
         {
             foreach (var monster in monsters)
             {
-                if (playerX == monster.x && playerY == monster.y) 
+                if (playerX == monster.x && playerY == monster.y)
                 {
-                    game.ChangeScene(SceneType.Battle); 
+                    game.ChangeScene(SceneType.Battle);
                     break;
                 }
             }
@@ -220,5 +227,5 @@ namespace OOPConsoleProject.Scenes
                 }
             }
         }
-    }   
+    }
 }

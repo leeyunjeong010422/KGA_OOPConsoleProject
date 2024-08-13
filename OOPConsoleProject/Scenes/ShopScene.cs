@@ -19,15 +19,12 @@ namespace OOPConsoleProject.Scenes
 
         public override void Enter()
         {
-            Console.WriteLine();
-            Console.WriteLine("상점에 들어갑니다");
-            Thread.Sleep(2000);
             curState = State.Buying;
         }
 
         public override void Exit()
         {
-            Console.WriteLine("상점을 나갑니다");
+            Console.WriteLine("상점을 나갑니다.");
             Console.WriteLine("아무 키나 눌러서 계속하세요");
         }
 
@@ -95,34 +92,34 @@ namespace OOPConsoleProject.Scenes
 
         private void BuyPotion(string potionInput)
         {
-            int price = 0;
+            int Gold = 0;
             string potionName = "";
 
             switch (potionInput)
-            {
+            {               
                 case "1":
                     potionName = "초급포션";
-                    price = 1000;
+                    Gold = 1000;
                     break;
                 case "2":
                     potionName = "중급포션";
-                    price = 2000;
+                    Gold = 2000;
                     break;
                 case "3":
                     potionName = "고급포션";
-                    price = 3000;
+                    Gold = 3000;
                     break;
                 default:
                     Console.WriteLine("잘못된 포션 번호입니다.");
                     return;
             }
 
-            if (player.Gold >= price)
+            if (player.Gold >= 0)
             {
                 Item potion = ItemFactory.Instantiate(potionName);
                 if (potion != null)
                 {
-                    player.Gold -= price;
+                    player.Gold -= Gold;
                     player.AddItemToInventory(potion); 
                     Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");  
                     Thread.Sleep(2000);

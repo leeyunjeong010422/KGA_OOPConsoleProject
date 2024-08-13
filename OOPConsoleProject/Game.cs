@@ -78,8 +78,8 @@ namespace OOPConsoleProject
 
             scenes = new Scene[(int)SceneType.Size];
             scenes[(int)SceneType.Title] = new TitleScene(this);
-            scenes[(int)SceneType.Select] = new SelectScene(this);
-            scenes[(int)SceneType.Map] = new MapScene(this);
+            scenes[(int)SceneType.Select] = new SelectScene(this, player);
+            scenes[(int)SceneType.Map] = new MapScene(this, player);
             scenes[(int)SceneType.Map1] = new MapScene1(this);
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this, player);
