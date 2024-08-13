@@ -74,7 +74,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
-                Console.WriteLine($"소지금 : {player.Gold}");
+                Console.WriteLine($"Gold : {player.Gold}");
                 Console.WriteLine("===================");
                 Console.WriteLine();
                 Console.Write("이대로 플레이 하시겠습니까? [네(Y) | 아니오(N)]: ");

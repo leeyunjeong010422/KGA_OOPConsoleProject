@@ -100,7 +100,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine($"체력 : {game.Player.CurHP}");
             Console.WriteLine($"공격 : {game.Player.Attack}");
             Console.WriteLine($"방어 : {game.Player.Defense}");
-            Console.WriteLine($"소지금 : {player.Gold}");
+            Console.WriteLine($"Gold : {player.Gold}");
             Console.WriteLine("===================");
 
             Console.WriteLine();
