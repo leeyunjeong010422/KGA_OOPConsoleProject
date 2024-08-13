@@ -93,16 +93,19 @@ namespace OOPConsoleProject.Scenes
         public override void Render()
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("===================");
+            Console.ResetColor();
             Console.WriteLine($"이름 : {game.Player.Name}");
             Console.WriteLine($"캐릭터 : {game.Player.Job}");
             Console.WriteLine($"포켓몬 : {SelectScene.selectedPoketMonster}");
-            Console.WriteLine($"체력 : {game.Player.CurHP}");
+            Console.WriteLine($"체력 : {game.Player.MaxHP}");
             Console.WriteLine($"공격 : {game.Player.Attack}");
             Console.WriteLine($"방어 : {game.Player.Defense}");
-            Console.WriteLine($"Gold : {player.Gold}");
+            Console.WriteLine($"Gold : {player.Gold} G");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("===================");
-
+            Console.ResetColor();
             Console.WriteLine();
 
             Console.WriteLine("캐릭터는 방향키로 움직입니다.");
