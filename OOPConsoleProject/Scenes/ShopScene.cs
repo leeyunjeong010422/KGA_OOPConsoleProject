@@ -28,6 +28,7 @@ namespace OOPConsoleProject.Scenes
         public override void Exit()
         {
             Console.WriteLine("상점을 나갑니다...");
+            Console.WriteLine("아무 키나 눌러서 계속하세요");
         }
 
         public override void Input()
@@ -41,13 +42,12 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Buying)
             {
-                Console.Write("[ 1. 물건 구입하기 | 2. 인벤토리 확인하기 ]: ");
+                Console.Write("[ 1. 물건 구입하기 | 2. 인벤토리 확인하기 | 3. 돌아가기 ]: ");
             }
             else if (curState == State.Confirm)
             {
-                Console.WriteLine("구매가 완료되었습니다. 메인 메뉴로 돌아갑니다.");
-                Console.WriteLine("아무 키나 눌러서 계속하세요...");
-                Console.ReadKey();
+                Console.WriteLine("메인 메뉴로 돌아갑니다.");
+                Console.WriteLine("아무 키나 눌러서 계속하세요");
                 curState = State.Buying; 
             }
             else if (curState == State.Exit)
@@ -71,6 +71,9 @@ namespace OOPConsoleProject.Scenes
                     break;
                 case "2":
                     game.ChangeScene(SceneType.Inventory); 
+                    break;
+                case "3":
+                    curState = State.Exit;
                     break;
                 default:
                     Console.WriteLine("잘못된 입력입니다. 다시 시도하세요.");
@@ -119,7 +122,7 @@ namespace OOPConsoleProject.Scenes
                 Item potion = ItemFactory.Instantiate(potionName);
                 if (potion != null)
                 {
-                    player.Gold -= price;      
+                    player.Gold -= price;
                     player.AddItemToInventory(potion); 
                     Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");  
                     Thread.Sleep(2000);
