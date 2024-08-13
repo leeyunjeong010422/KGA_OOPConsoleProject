@@ -1,5 +1,6 @@
 ﻿namespace OOPConsoleProject
 {
+    //상점에서 살 수 있는 아이템들
     public class ItemFactory
     {
         public static Item Instantiate(string name)
