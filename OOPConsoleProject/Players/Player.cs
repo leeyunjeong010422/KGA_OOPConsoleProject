@@ -1,9 +1,8 @@
-﻿using OOPConsoleProject.Scenes;
-using OOPConsoleProject.VillainMonsters;
+﻿using OOPConsoleProject.Interface;
 
 namespace OOPConsoleProject.Players
 {
-    public class Player
+    public class Player : Inventory
     {
         protected string name;
         public string Name { get { return name; } }
@@ -15,28 +14,28 @@ namespace OOPConsoleProject.Players
         public int CurHP
         {
             get { return curHP; }
-            set { curHP = value; } 
+            set { curHP = value; }
         }
 
         protected int maxHP;
         public int MaxHP
         {
             get { return maxHP; }
-            set { maxHP = value; } 
+            set { maxHP = value; }
         }
 
         protected int attack;
         public int Attack
         {
             get { return attack; }
-            set { attack = value; } 
+            set { attack = value; }
         }
 
         protected int defense;
         public int Defense
         {
             get { return defense; }
-            set { defense = value; } 
+            set { defense = value; }
         }
 
         protected int gold;
@@ -66,6 +65,20 @@ namespace OOPConsoleProject.Players
             Console.WriteLine("==========================================");
             Console.WriteLine();
             Console.SetCursorPosition(0, 0);
+        }
+
+        public void AddItem(Item item)
+        {
+            inventory.Add(item);
+        }
+
+        public void ShowInventory()
+        {
+            Console.WriteLine("<인벤토리>");
+            foreach (var item in inventory)
+            {
+                Console.WriteLine($"{item.name}");
+            }
         }
     }
 }

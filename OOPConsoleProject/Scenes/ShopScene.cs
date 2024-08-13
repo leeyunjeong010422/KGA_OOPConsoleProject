@@ -20,14 +20,14 @@ namespace OOPConsoleProject.Scenes
         public override void Enter()
         {
             Console.WriteLine();
-            Console.WriteLine("상점에 들어갑니다...");
+            Console.WriteLine("상점에 들어갑니다");
             Thread.Sleep(2000);
             curState = State.Buying;
         }
 
         public override void Exit()
         {
-            Console.WriteLine("상점을 나갑니다...");
+            Console.WriteLine("상점을 나갑니다");
             Console.WriteLine("아무 키나 눌러서 계속하세요");
         }
 

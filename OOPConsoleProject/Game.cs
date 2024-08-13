@@ -38,22 +38,6 @@ namespace OOPConsoleProject
             End();
         }
 
-        //public void ChangeScene(SceneType sceneType)
-        //{
-        //    curScene.Exit();
-        //    curScene = scenes[(int)sceneType];
-        //    curScene.Enter();
-        //}
-
-        //private Scene prevScene;
-
-        //public void EndBattle()
-        //{
-        //    curScene.Exit();
-        //    curScene = prevScene;
-        //    curScene.Enter();
-        //}
-
         private Scene prevScene;
         public void ChangeScene(SceneType sceneType)
         {
@@ -98,7 +82,7 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Map] = new MapScene(this);
             scenes[(int)SceneType.Map1] = new MapScene1(this);
             scenes[(int)SceneType.Battle] = new BattleScene(this);
-            scenes[(int)SceneType.Inventory] = new InventoryScene(this);
+            scenes[(int)SceneType.Inventory] = new InventoryScene(this, player);
             scenes[(int)SceneType.Shop] = new ShopScene(this, player);
             scenes[(int)SceneType.GameOver] = new GameOverScene(this);
 
