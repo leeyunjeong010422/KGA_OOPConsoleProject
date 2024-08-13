@@ -30,7 +30,19 @@ namespace OOPConsoleProject.Scenes
 
         public override void Render()
         {
-            Console.WriteLine("    게임을 시작하려면 아무키나 누르세요    ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("           。　♡ 。　　♡。　　♡");
+            Console.WriteLine("           ♡。　＼　　｜　　／。　♡");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("           　  포켓몬스터 게임       ");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("           ♡。　／　　｜　　＼。　♡");
+            Console.WriteLine("           。　♡。 　　。　　♡。");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("      게임을 시작하려면 아무키나 누르세요.     ");
         }
 
         public override void Update()
