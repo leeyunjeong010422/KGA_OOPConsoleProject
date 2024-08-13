@@ -81,7 +81,8 @@ namespace OOPConsoleProject.Scenes
             }
             else if (key == ConsoleKey.D0)
             {
-                //UsePotion();
+                player.ShowInventory();
+                player.PromptPotionSelection();
             }
             else
             {
