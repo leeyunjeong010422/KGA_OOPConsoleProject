@@ -3,7 +3,24 @@
   "WorkspaceRootPath": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Academy\\KGA_OOPConsoleProject\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\inventoryscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\inventoryscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\interface\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:interface\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,8 +30,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 184,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Interface\\Inventory.cs",
+              "RelativeDocumentMoniker": "Interface\\Inventory.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Interface\\Inventory.cs",
+              "RelativeToolTip": "Interface\\Inventory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T10:17:36.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
+              "RelativeDocumentMoniker": "Players\\Player.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
+              "RelativeToolTip": "Players\\Player.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAAAFAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T10:14:36.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
+              "RelativeDocumentMoniker": "Game.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAA7wGIAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T10:12:42.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InventoryScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\InventoryScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\InventoryScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\InventoryScene.cs",
+              "RelativeToolTip": "Scenes\\InventoryScene.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAYwB0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T09:42:53.407Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -57,15 +126,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\.gitignore",
-              "RelativeDocumentMoniker": "..\\.gitignore",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\.gitignore",
-              "RelativeToolTip": "..\\.gitignore",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-13T09:17:48.057Z",
+              "DocumentIndex": 1,
+              "Title": "ShopScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\ShopScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
+              "RelativeToolTip": "Scenes\\ShopScene.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAiwIEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T09:41:44.451Z",
               "EditorCaption": ""
             }
           ]
