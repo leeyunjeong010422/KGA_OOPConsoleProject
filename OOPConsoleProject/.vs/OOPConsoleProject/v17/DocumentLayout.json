@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\titlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\selectscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\selectscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\mapscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\mapscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\inventoryscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\inventoryscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\gameoverscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\gameoverscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +50,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 184,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TitleScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\TitleScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\TitleScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\TitleScene.cs",
+              "RelativeToolTip": "Scenes\\TitleScene.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAQwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:37.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SelectScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\SelectScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\SelectScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\SelectScene.cs",
+              "RelativeToolTip": "Scenes\\SelectScene.cs",
+              "ViewState": "AQIAALoAAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:26.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\Scene.cs",
+              "RelativeDocumentMoniker": "Scenes\\Scene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\Scene.cs",
+              "RelativeToolTip": "Scenes\\Scene.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:24.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MapScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\MapScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\MapScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\MapScene.cs",
+              "RelativeToolTip": "Scenes\\MapScene.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:18.626Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -70,13 +142,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "InventoryScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\InventoryScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\InventoryScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\InventoryScene.cs",
+              "RelativeToolTip": "Scenes\\InventoryScene.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:16.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameOverScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\GameOverScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\GameOverScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\GameOverScene.cs",
+              "RelativeToolTip": "Scenes\\GameOverScene.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAA9wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T08:37:14.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ItemFactory.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\ItemFactory.cs",
               "RelativeDocumentMoniker": "ItemFactory.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\ItemFactory.cs",
               "RelativeToolTip": "ItemFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T07:49:34.2Z",
               "EditorCaption": ""
@@ -84,51 +182,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
-              "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
-              "RelativeToolTip": "Game.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAgwGQAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T07:49:00.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ShopScene.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
               "RelativeDocumentMoniker": "Scenes\\ShopScene.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
               "RelativeToolTip": "Scenes\\ShopScene.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAYwHcAAAAJAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAwwDIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T07:48:53.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "BattleScene.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
               "RelativeDocumentMoniker": "Scenes\\BattleScene.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
               "RelativeToolTip": "Scenes\\BattleScene.cs",
-              "ViewState": "AQIAAJ4AAAAAAAAAAAAcwAAAAAAAAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAA9wGIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T07:48:46.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
               "RelativeDocumentMoniker": "Players\\Player.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
               "RelativeToolTip": "Players\\Player.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAqwDgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T07:48:33.285Z",
               "EditorCaption": ""

@@ -5,7 +5,7 @@ namespace OOPConsoleProject.Scenes
 {
     public class ShopScene : Scene
     {
-        public enum State { Buying, Inventory, Confirm }
+        public enum State { Buying, Inventory, Confirm, Exit }
         private State curState;
 
         private Game game;
@@ -41,7 +41,18 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Buying)
             {
-                Console.Write("1. 물건 구입하기 | 2. 인벤토리 확인하기\n");
+                Console.Write("[ 1. 물건 구입하기 | 2. 인벤토리 확인하기 ]: ");
+            }
+            else if (curState == State.Confirm)
+            {
+                Console.WriteLine("구매가 완료되었습니다. 메인 메뉴로 돌아갑니다.");
+                Console.WriteLine("아무 키나 눌러서 계속하세요...");
+                Console.ReadKey();
+                curState = State.Buying; 
+            }
+            else if (curState == State.Exit)
+            {
+                game.EndBattle();
             }
         }
 
@@ -71,9 +82,9 @@ namespace OOPConsoleProject.Scenes
         {
             Console.Clear();
             Console.WriteLine("구입할 포션을 선택하세요:");
-            Console.WriteLine("1. 초급포션 - 100골드");
-            Console.WriteLine("2. 중급포션 - 200골드");
-            Console.WriteLine("3. 고급포션 - 300골드");
+            Console.WriteLine("1. 초급포션 - 1000골드");
+            Console.WriteLine("2. 중급포션 - 2000골드");
+            Console.WriteLine("3. 고급포션 - 3000골드");
             Console.Write("구입할 포션 번호: ");
             string potionInput = Console.ReadLine();
             BuyPotion(potionInput);
@@ -111,6 +122,8 @@ namespace OOPConsoleProject.Scenes
                     player.Gold -= price; 
                     player.AddItemToInventory(potion); 
                     Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");
+                    Thread.Sleep(2000);
+                    curState = State.Confirm;
                 }
             }
             else
