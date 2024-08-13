@@ -85,7 +85,7 @@ namespace OOPConsoleProject.Players
             Console.WriteLine("<인벤토리>");
             foreach (var item in inventory)
             {
-                Console.WriteLine($"{item.name}");
+                Console.WriteLine($"{item.name} (회복량: {item.hp})");
             }
         }
         public void PromptPotionSelection()

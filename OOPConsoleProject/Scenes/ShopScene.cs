@@ -81,10 +81,13 @@ namespace OOPConsoleProject.Scenes
         private void ShowPotionOptions()
         {
             Console.Clear();
-            Console.WriteLine("구입할 포션을 선택하세요:");
+            Console.WriteLine("구입할 물건을 선택하세요:");
             Console.WriteLine("1. 초급포션 - 1000골드");
             Console.WriteLine("2. 중급포션 - 2000골드");
             Console.WriteLine("3. 고급포션 - 3000골드");
+            Console.WriteLine("4. 맛있는 물 - 2000골드");
+            Console.WriteLine("5. 미네랄 사이다 - 2000골드");
+            Console.WriteLine("6. 후르츠밀크 - 2000골드");
             Console.Write("구입할 포션 번호: ");
             string potionInput = Console.ReadLine();
             BuyPotion(potionInput);
@@ -108,6 +111,18 @@ namespace OOPConsoleProject.Scenes
                 case "3":
                     potionName = "고급포션";
                     Gold = 3000;
+                    break;
+                case "4":
+                    potionName = "맛있는 물";
+                    Gold = 2000;
+                    break;
+                case "5":
+                    potionName = "미네랄 사이다";
+                    Gold = 2000;
+                    break;
+                case "6":
+                    potionName = "후르츠밀크";
+                    Gold = 2000;
                     break;
                 default:
                     Console.WriteLine("잘못된 포션 번호입니다.");

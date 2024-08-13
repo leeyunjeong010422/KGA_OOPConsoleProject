@@ -16,6 +16,18 @@
             {
                 return new Potion("고급포션", 70);
             }
+            else if (name == "맛있는 물")
+            {
+                return new Drinking("맛있는 물", 50);
+            }
+            else if (name == "미네랄 사이다")
+            {
+                return new Drinking("미네랄 사이다", 50);
+            }
+            else if (name == "후르츠밀크")
+            {
+                return new Drinking("후르츠밀크", 50);
+            }
             else
             {
                 Console.WriteLine("해당 이름의 아이템이 없습니다.");
@@ -40,6 +52,14 @@
     {
         public Potion(string name, int hp) : base(name, hp)
         {
+        }
+    }
+
+    public class Drinking : Item
+    {
+        public Drinking(string name, int hp) : base(name, hp)
+        {
+
         }
     }
 }
