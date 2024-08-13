@@ -4,7 +4,7 @@ namespace OOPConsoleProject.Players
 {
     public class UNG : Player
     {
-        public UNG(string name)
+        public UNG(string name) : base()
         {
             this.name = name;
             this.job = Job.웅이;

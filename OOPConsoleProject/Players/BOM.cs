@@ -9,7 +9,7 @@ namespace OOPConsoleProject.Players
 {
     public class BOM : Player
     {
-        public BOM(string name)
+        public BOM(string name) : base()
         {
             this.name = name;
             this.job = Job.봄이;
@@ -18,7 +18,7 @@ namespace OOPConsoleProject.Players
             this.attack = 50;
             this.defense = 50;
             this.gold = 10000;
-        }        
+        }
     }
 }
 

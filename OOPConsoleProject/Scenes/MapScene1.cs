@@ -1,4 +1,7 @@
-﻿namespace OOPConsoleProject.Scenes
+﻿using System;
+using System.Collections.Generic;
+
+namespace OOPConsoleProject.Scenes
 {
     public class MapScene1 : Scene
     {
@@ -68,18 +71,50 @@
         public override void Input()
         {
             var key = Console.ReadKey(true).Key;
-            Move(key);
+            if (key == ConsoleKey.D1)
+            {
+                game.ChangeScene(SceneType.Shop);
+            }
+            else if (key == ConsoleKey.D2)
+            {
+                game.ChangeScene(SceneType.Inventory);
+            }
+            else
+            {
+                Move(key);
+            }
         }
 
         public override void Render()
         {
             Console.Clear();
+            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
+            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
+            Console.WriteLine();
+
+            Console.WriteLine("===================");
+            Console.WriteLine($"이름 : {game.Player.Name}");
+            Console.WriteLine($"캐릭터 : {game.Player.Job}");
+            Console.WriteLine($"포켓몬 : {SelectScene.selectedPoketMonster}");
+            Console.WriteLine($"체력 : {game.Player.CurHP}");
+            Console.WriteLine($"공격 : {game.Player.Attack}");
+            Console.WriteLine($"방어 : {game.Player.Defense}");
+            Console.WriteLine($"소지금 : {game.Player.Gold}");
+            Console.WriteLine("===================");
+
+            Console.WriteLine();
+
+
             for (int i = 0; i < maze.GetLength(0); i++)
             {
                 for (int j = 0; j < maze.GetLength(1); j++)
                 {
                     if (i == playerY && j == playerX)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("P ");
+                        Console.ResetColor();
+                    }
                     else
                         Console.Write(maze[i, j] + " ");
                 }

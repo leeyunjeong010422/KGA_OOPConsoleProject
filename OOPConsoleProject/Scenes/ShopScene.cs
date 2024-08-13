@@ -1,41 +1,122 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OOPConsoleProject.Players;
+using OOPConsoleProject;
 
 namespace OOPConsoleProject.Scenes
 {
     public class ShopScene : Scene
     {
-        public ShopScene(Game game) : base(game)
-        {
+        public enum State { Buying, Inventory, Confirm }
+        private State curState;
 
+        private Game game;
+        private Player player;
+
+        public ShopScene(Game game, Player player) : base(game)
+        {
+            this.game = game;
+            this.player = player;
         }
 
         public override void Enter()
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
+            Console.WriteLine("상점에 들어갑니다...");
+            Thread.Sleep(2000);
+            curState = State.Buying;
         }
 
         public override void Exit()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("상점을 나갑니다...");
         }
 
         public override void Input()
         {
-            throw new NotImplementedException();
+            string input = Console.ReadLine();
+            ProcessInput(input);
         }
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            if (curState == State.Buying)
+            {
+                Console.Write("1. 물건 구입하기 | 2. 인벤토리 확인하기\n");
+            }
         }
 
         public override void Update()
         {
-            throw new NotImplementedException();
+
+        }   
+
+        private void ProcessInput(string input)
+        {
+            switch (input)
+            {
+                case "1":
+                    curState = State.Buying; 
+                    ShowPotionOptions();
+                    break;
+                case "2":
+                    game.ChangeScene(SceneType.Inventory); 
+                    break;
+                default:
+                    Console.WriteLine("잘못된 입력입니다. 다시 시도하세요.");
+                    break;
+            }
+        }
+
+        private void ShowPotionOptions()
+        {
+            Console.Clear();
+            Console.WriteLine("구입할 포션을 선택하세요:");
+            Console.WriteLine("1. 초급포션 - 100골드");
+            Console.WriteLine("2. 중급포션 - 200골드");
+            Console.WriteLine("3. 고급포션 - 300골드");
+            Console.Write("구입할 포션 번호: ");
+            string potionInput = Console.ReadLine();
+            BuyPotion(potionInput);
+        }
+
+        private void BuyPotion(string potionInput)
+        {
+            int price = 0;
+            string potionName = "";
+
+            switch (potionInput)
+            {
+                case "1":
+                    potionName = "초급포션";
+                    price = 1000;
+                    break;
+                case "2":
+                    potionName = "중급포션";
+                    price = 2000;
+                    break;
+                case "3":
+                    potionName = "고급포션";
+                    price = 3000;
+                    break;
+                default:
+                    Console.WriteLine("잘못된 포션 번호입니다.");
+                    return;
+            }
+
+            if (player.Gold >= price)
+            {
+                Item potion = ItemFactory.Instantiate(potionName);
+                if (potion != null)
+                {
+                    player.Gold -= price; 
+                    player.AddItemToInventory(potion); 
+                    Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("골드가 부족합니다.");
+            }
         }
     }
 }

@@ -21,8 +21,10 @@ namespace OOPConsoleProject
 
         public Game()
         {
-            PoketMonster = new PoketMonster();
+            
         }
+
+     
 
         public void Run()
         {
@@ -85,6 +87,9 @@ namespace OOPConsoleProject
 
         private void Start()
         {
+            player = new Player();
+            poketMonster = new PoketMonster();
+
             isRunning = true;
 
             scenes = new Scene[(int)SceneType.Size];
@@ -94,7 +99,7 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Map1] = new MapScene1(this);
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this);
-            scenes[(int)SceneType.Shop] = new ShopScene(this);
+            scenes[(int)SceneType.Shop] = new ShopScene(this, player);
             scenes[(int)SceneType.GameOver] = new GameOverScene(this);
 
             curScene = scenes[(int)SceneType.Title];

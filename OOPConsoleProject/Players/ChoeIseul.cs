@@ -9,7 +9,7 @@ namespace OOPConsoleProject.Players
 {
     public class ChoeIseul : Player
     {
-        public ChoeIseul(string name)
+        public ChoeIseul(string name) : base()
         {
             this.name = name;
             this.job = Job.최이슬;

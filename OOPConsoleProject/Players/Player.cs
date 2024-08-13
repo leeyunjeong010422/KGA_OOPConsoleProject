@@ -1,8 +1,9 @@
-﻿using OOPConsoleProject.VillainMonsters;
+﻿using OOPConsoleProject.Scenes;
+using OOPConsoleProject.VillainMonsters;
 
 namespace OOPConsoleProject.Players
 {
-    public abstract class Player
+    public class Player
     {
         protected string name;
         public string Name { get { return name; } }
@@ -40,7 +41,20 @@ namespace OOPConsoleProject.Players
 
         protected int gold;
         public int Gold { get { return gold; } set { gold = value; } }
-       
+
+        public List<Item> inventory;
+
+        public Player()
+        {
+            Gold = 1000;
+            inventory = new List<Item>();
+        }
+
+        public void AddItemToInventory(Item item)
+        {
+            inventory.Add(item);
+            Console.WriteLine($"{item.name}가 인벤토리에 추가되었습니다.");
+        }
 
         public void ShowInfo()
         {

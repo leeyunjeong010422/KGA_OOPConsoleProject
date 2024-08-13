@@ -23,10 +23,11 @@ namespace OOPConsoleProject.Scenes
         public override void Enter()
         {
             RandomMonster();
+            Console.Clear();
             Console.WriteLine($"{currentMonster.name}을 마주쳤습니다!");
             DisplayRandomMonster();
             Console.WriteLine("전투가 시작됩니다! 잠시만 기다려주세요...");
-            Thread.Sleep(4000);
+            Thread.Sleep(3000);
             curState = State.Choice;
 
         }
@@ -61,6 +62,8 @@ namespace OOPConsoleProject.Scenes
                 {
                     currentMonster.hp = 0;
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
+                    game.Player.Gold += 2000;
+                    Console.WriteLine("몬스터 처치 보상으로 2000 Gold를 획득하셨습니다.");
                     game.EndBattle();
                 }
                 else
@@ -91,6 +94,8 @@ namespace OOPConsoleProject.Scenes
                 {
                     currentMonster.hp = 0;
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
+                    game.Player.Gold += 2000;
+                    Console.WriteLine("몬스터 처치 보상으로 2000 Gold를 획득하셨습니다.");
                     game.EndBattle();
                 }
                 else

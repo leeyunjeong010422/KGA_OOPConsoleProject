@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:scenes\\shopscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\scenes\\battlescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:players\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\players\\hanjiu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:players\\hanjiu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|c:\\academy\\kga_oopconsoleproject\\oopconsoleproject\\villainmonsters\\villainmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E11580-9CF6-44E6-AFDE-316AAD98B3D1}|OOPConsoleProject.csproj|solutionrelative:villainmonsters\\villainmonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 184,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,64 +70,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "ItemFactory.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\ItemFactory.cs",
+              "RelativeDocumentMoniker": "ItemFactory.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\ItemFactory.cs",
+              "RelativeToolTip": "ItemFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:49:34.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Game.cs",
               "RelativeToolTip": "Game.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAmwDUAAAAAAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAgwGQAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T04:00:16.85Z",
+              "WhenOpened": "2024-08-13T07:49:00.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShopScene.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
+              "RelativeDocumentMoniker": "Scenes\\ShopScene.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\ShopScene.cs",
+              "RelativeToolTip": "Scenes\\ShopScene.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAYwHcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:48:53.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HanJiu.cs",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\HanJiu.cs",
-              "RelativeDocumentMoniker": "Players\\HanJiu.cs",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\HanJiu.cs",
-              "RelativeToolTip": "Players\\HanJiu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:34:52.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
-              "RelativeDocumentMoniker": "Players\\Player.cs",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
-              "RelativeToolTip": "Players\\Player.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:34:44.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VillainMonster.cs",
-              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\VillainMonsters\\VillainMonster.cs",
-              "RelativeDocumentMoniker": "VillainMonsters\\VillainMonster.cs",
-              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\VillainMonsters\\VillainMonster.cs",
-              "RelativeToolTip": "VillainMonsters\\VillainMonster.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAYwC4AAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:30:47.382Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "BattleScene.cs",
               "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
               "RelativeDocumentMoniker": "Scenes\\BattleScene.cs",
               "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Scenes\\BattleScene.cs",
               "RelativeToolTip": "Scenes\\BattleScene.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAswHgAAAAlAAAA",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:28:03.651Z",
+              "WhenOpened": "2024-08-13T07:48:46.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
+              "RelativeDocumentMoniker": "Players\\Player.cs",
+              "ToolTip": "C:\\Academy\\KGA_OOPConsoleProject\\OOPConsoleProject\\Players\\Player.cs",
+              "RelativeToolTip": "Players\\Player.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:48:33.285Z",
               "EditorCaption": ""
             }
           ]
