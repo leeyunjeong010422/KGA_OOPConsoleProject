@@ -1,6 +1,7 @@
 ﻿using OOPConsoleProject.Players;
 using OOPConsoleProject.PoketMonsters;
 using OOPConsoleProject.Scenes;
+using System.Threading;
 
 namespace OOPConsoleProject
 {
@@ -35,11 +36,46 @@ namespace OOPConsoleProject
             End();
         }
 
+        //public void ChangeScene(SceneType sceneType)
+        //{
+        //    curScene.Exit();
+        //    curScene = scenes[(int)sceneType];
+        //    curScene.Enter();
+        //}
+
+        //private Scene prevScene;
+
+        //public void EndBattle()
+        //{
+        //    curScene.Exit();
+        //    curScene = prevScene;
+        //    curScene.Enter();
+        //}
+
+        private Scene prevScene;
         public void ChangeScene(SceneType sceneType)
         {
-            curScene.Exit();
+            if (curScene != null)
+            {
+                curScene.Exit();
+                prevScene = curScene;
+            }
             curScene = scenes[(int)sceneType];
             curScene.Enter();
+        }
+
+        public void EndBattle()
+        {
+            if (prevScene != null)
+            {
+                curScene.Exit();
+                curScene = prevScene; 
+                curScene.Enter();
+            }
+            else
+            {               
+                ChangeScene(SceneType.Title);
+            }
         }
 
         public void Over()
@@ -84,5 +120,7 @@ namespace OOPConsoleProject
         {
             curScene.Update();
         }
+
+
     }
 }

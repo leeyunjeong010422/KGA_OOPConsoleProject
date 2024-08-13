@@ -61,6 +61,7 @@ namespace OOPConsoleProject.Scenes
                 {
                     currentMonster.hp = 0;
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
+                    game.EndBattle();
                 }
                 else
                 {
@@ -90,6 +91,7 @@ namespace OOPConsoleProject.Scenes
                 {
                     currentMonster.hp = 0;
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
+                    game.EndBattle();
                 }
                 else
                 {
@@ -116,7 +118,7 @@ namespace OOPConsoleProject.Scenes
                 if (escape)
                 {
                     Console.WriteLine("도망에 성공했습니다!");
-                    game.ChangeScene(SceneType.Map);
+                    game.EndBattle();
                 }
                 else
                 {
