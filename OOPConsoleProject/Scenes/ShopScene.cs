@@ -121,7 +121,7 @@ namespace OOPConsoleProject.Scenes
                 {
                     player.Gold -= price; 
                     player.AddItemToInventory(potion); 
-                    Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");
+                    Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");  
                     Thread.Sleep(2000);
                     curState = State.Confirm;
                 }
