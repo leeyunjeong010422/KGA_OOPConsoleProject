@@ -46,36 +46,43 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Name)
             {
-                Console.Write("캐릭터의 이름을 입력하세요 : ");
+                Console.Write("캐릭터의 이름을 입력하세요: ");
             }
             else if (curState == State.Job)
             {
-                Console.WriteLine("캐릭터를 선택하세요.");
+                Console.WriteLine("플레이할 캐릭터를 선택하세요.");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("1. 한지우");
                 Console.WriteLine("2. 최이슬");
                 Console.WriteLine("3. 웅이");
                 Console.WriteLine("4. 봄이");
                 Console.ResetColor();
-                Console.Write("입력해주세요: ");
+                Console.WriteLine();
+                Console.Write("입력: ");
             }
             else if (curState == State.PoketMonsterSelection)
             {
                 DisplayPoketMonsters(currentJob);
-                Console.Write("플레이할 포켓몬 번호 입력: ");                
+                Console.WriteLine();
+                Console.Write("사용할 포켓몬 번호 입력: ");                
             }
 
             else if (curState == State.Confirm)
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("===================");
+                Console.ResetColor();
                 Console.WriteLine($"이름 : {game.Player.Name}");
                 Console.WriteLine($"캐릭터 : {game.Player.Job}");
                 Console.WriteLine($"포켓몬 : {selectedPoketMonster}");
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
-                Console.WriteLine($"Gold : {player.Gold}");
+                Console.WriteLine($"Gold : {player.Gold} G");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("===================");
+                Console.ResetColor();
                 Console.WriteLine();
                 Console.Write("이대로 플레이 하시겠습니까? [네(Y) | 아니오(N)]: ");
             }
@@ -166,6 +173,7 @@ namespace OOPConsoleProject.Scenes
         private void DisplayPoketMonsters(Job job)
         {
             Console.WriteLine($"<선택한 캐릭터[{game.Player.Job}]에 따른 포켓몬 목록>");
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
             switch (job)
             {
