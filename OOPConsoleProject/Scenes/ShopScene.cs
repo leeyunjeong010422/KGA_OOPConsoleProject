@@ -24,8 +24,7 @@ namespace OOPConsoleProject.Scenes
 
         public override void Exit()
         {
-            Console.WriteLine("상점을 나갑니다.");
-            Console.WriteLine("아무 키나 눌러서 계속하세요");
+            Console.WriteLine("아무 키나 눌러서 상점을 나가세요.");
         }
 
         public override void Input()
@@ -43,8 +42,7 @@ namespace OOPConsoleProject.Scenes
             }
             else if (curState == State.Confirm)
             {
-                Console.WriteLine("메인 메뉴로 돌아갑니다.");
-                Console.WriteLine("아무 키나 눌러서 계속하세요");
+                Console.WriteLine("아무 키나 눌러서 메인으로 돌아가세요.");
                 curState = State.Buying; 
             }
             else if (curState == State.Exit)
@@ -73,7 +71,7 @@ namespace OOPConsoleProject.Scenes
                     curState = State.Exit;
                     break;
                 default:
-                    Console.WriteLine("잘못된 입력입니다. 다시 시도하세요.");
+                    Console.WriteLine("잘못된 입력입니다. 다시 입력해주세요.");
                     break;
             }
         }
@@ -81,7 +79,7 @@ namespace OOPConsoleProject.Scenes
         private void ShowPotionOptions()
         {
             Console.Clear();
-            Console.WriteLine("구입할 물건을 선택하세요:");
+            Console.WriteLine("구입할 물건을 선택하세요");
             Console.WriteLine("1. 초급포션 - 1000골드");
             Console.WriteLine("2. 중급포션 - 2000골드");
             Console.WriteLine("3. 고급포션 - 3000골드");
@@ -125,7 +123,7 @@ namespace OOPConsoleProject.Scenes
                     Gold = 2000;
                     break;
                 default:
-                    Console.WriteLine("잘못된 포션 번호입니다.");
+                    Console.WriteLine("잘못된 번호입니다.");
                     return;
             }
 
@@ -136,7 +134,7 @@ namespace OOPConsoleProject.Scenes
                 {
                     player.Gold -= Gold;
                     player.AddItemToInventory(potion); 
-                    Console.WriteLine($"{potionName}을(를) 구매하셨습니다.");  
+                    Console.WriteLine($"{potionName}을(를) 구매하였습니다.");  
                     Thread.Sleep(2000);
                     curState = State.Confirm;
                 }
