@@ -52,7 +52,7 @@ namespace OOPConsoleProject
 
         public void EndBattle()
         {
-            //Console.WriteLine($"현재 씬: {curScene}, 이전 씬: {prevScene}");
+            //Console.WriteLine($"현재: {curScene}, 이전: {prevScene}");
             if (prevScene != null)
             {
                 curScene.Exit();
