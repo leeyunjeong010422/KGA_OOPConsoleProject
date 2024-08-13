@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OOPConsoleProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc29c408f6a6fabd1d97614fc32ff9b06fac89c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e4dc2657a155b0ff4aeac83036b81e681372a30")]
 [assembly: System.Reflection.AssemblyProductAttribute("OOPConsoleProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OOPConsoleProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

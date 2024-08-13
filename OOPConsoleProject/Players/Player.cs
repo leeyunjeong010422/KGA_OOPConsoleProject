@@ -46,7 +46,7 @@ namespace OOPConsoleProject.Players
 
         public Player()
         {
-            Gold = 1000;
+            Gold = 10000;
             inventory = new List<Item>();
         }
 

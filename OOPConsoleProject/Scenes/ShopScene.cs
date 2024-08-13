@@ -129,6 +129,7 @@ namespace OOPConsoleProject.Scenes
             else
             {
                 Console.WriteLine("골드가 부족합니다.");
+                Thread.Sleep(2000);
             }
         }
     }
