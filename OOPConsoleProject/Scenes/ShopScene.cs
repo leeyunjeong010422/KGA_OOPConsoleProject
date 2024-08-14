@@ -38,7 +38,10 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Buying)
             {
+                Console.WriteLine("무엇을 하시겠습니까?");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("[ 1. 포션 구입하기 | 2. 장비 구입하기 | 3. 인벤토리 확인하기 | 4. 돌아가기 ]: ");
+                Console.ResetColor();
             }
             else if (curState == State.Confirm)
             {
@@ -83,13 +86,17 @@ namespace OOPConsoleProject.Scenes
         private void ShowPotionOptions()
         {
             Console.Clear();
-            Console.WriteLine("구입할 물건을 선택하세요");
+            Console.WriteLine("[ 구입할 물건을 선택하세요. ]");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("1. 초급포션 - 1000골드");
             Console.WriteLine("2. 중급포션 - 2000골드");
             Console.WriteLine("3. 고급포션 - 3000골드");
             Console.WriteLine("4. 맛있는 물 - 2000골드");
             Console.WriteLine("5. 미네랄 사이다 - 2000골드");
             Console.WriteLine("6. 후르츠밀크 - 2000골드");
+            Console.ResetColor();
+            Console.WriteLine();
             Console.Write("구입할 포션 번호: ");
             string potionInput = Console.ReadLine();
             BuyPotion(potionInput);
@@ -98,10 +105,14 @@ namespace OOPConsoleProject.Scenes
         private void ShowGearOptions()
         {
             Console.Clear();
-            Console.WriteLine("구입할 방어구를 선택하세요");
+            Console.WriteLine("[ 구입할 방어구를 선택하세요. ]");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("1. 진화의 휘석 - 3000골드");
             Console.WriteLine("2. 돌격 조끼 - 5000골드");
             Console.WriteLine("3. 은밀 망토 - 7000골드");
+            Console.ResetColor();
+            Console.WriteLine();
             Console.Write("구입할 방어구 번호: ");
             string gearInput = Console.ReadLine();
             BuyGear(gearInput);
@@ -150,14 +161,16 @@ namespace OOPConsoleProject.Scenes
                 {
                     game.player.Gold -= price;
                     player.AddItemToInventory(potion);
-                    Console.WriteLine($"{itemName}을(를) 구매하였습니다.");
-                    Thread.Sleep(2000);
+                    Console.WriteLine();
                     curState = State.Confirm;
                 }
             }
             else
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("골드가 부족합니다.");
+                Console.ResetColor();
                 Thread.Sleep(2000);
             }
         }
@@ -193,14 +206,17 @@ namespace OOPConsoleProject.Scenes
                 {
                     game.player.Gold -= price;
                     player.AddGearToInventory(gear);
-                    Console.WriteLine($"{gearName}을(를) 구매하였습니다.");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
                     curState = State.Confirm;
                 }
             }
             else
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("골드가 부족합니다.");
+                Console.ResetColor();
                 Thread.Sleep(2000);
             }
         }

@@ -93,11 +93,6 @@ namespace OOPConsoleProject.Scenes
             {
                 game.ChangeScene(SceneType.Inventory);
             }
-            else if (key == ConsoleKey.D0)
-            {
-                Console.Clear();
-                UseInventory();
-            }
             else
             {
                 Move(key);
@@ -159,13 +154,10 @@ namespace OOPConsoleProject.Scenes
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("                <현 위치: 관동지방>");
             Console.ResetColor();
-            Console.WriteLine();            
-            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
-            Console.WriteLine("[ 0번: 포션 먹기 ]");
-            Console.ResetColor();
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리 (포션 먹기, 장비 착용 가능) ]");
+            Console.ResetColor();
 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;

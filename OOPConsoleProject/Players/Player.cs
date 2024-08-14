@@ -65,13 +65,27 @@ namespace OOPConsoleProject.Players
         public void AddItemToInventory(Item item)
         {
             inventory.Add(item);
-            Console.WriteLine($"{item.name}이(가) 인벤토리에 추가되었습니다.");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"{item.name}을(를) 구매하였습니다.");
+            Thread.Sleep(1000);
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("인벤토리에 추가되었습니다.");
+            Thread.Sleep(1500);
         }
 
         public void AddGearToInventory(DefensiveGear gear)
         {
             gearInventory.Add(gear);
-            Console.WriteLine($"{gear.name}이(가) 인벤토리에 추가되었습니다.");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;           
+            Console.WriteLine($"{gear.name}을(를) 구매하였습니다.");
+            Thread.Sleep(1000);
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine($"인벤토리에 추가되었습니다.");
+            Thread.Sleep(1500);
         }
     }
 }
