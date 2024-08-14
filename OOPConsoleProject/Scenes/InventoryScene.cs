@@ -1,5 +1,4 @@
-﻿using OOPConsoleProject.Interface;
-using OOPConsoleProject.Players;
+﻿using OOPConsoleProject.Players;
 
 namespace OOPConsoleProject.Scenes
 {
