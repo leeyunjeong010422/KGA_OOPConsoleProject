@@ -48,10 +48,19 @@ namespace OOPConsoleProject.Scenes
 
         public void ShowInventory()
         {
-            Console.WriteLine("<인벤토리>");
+            Console.WriteLine("<포션 인벤토리>");
             foreach (var item in player.inventory)
             {
                 Console.WriteLine($"{item.name} (회복량: {item.hp})");
+            }
+        }
+
+        public void ShowGearInventory()
+        {
+            Console.WriteLine("<방어구 인벤토리>");
+            foreach (var gear in player.gearInventory)
+            {
+                Console.WriteLine($"{gear.name} (방어력: {gear.defensivePower})");
             }
         }
 
@@ -92,7 +101,9 @@ namespace OOPConsoleProject.Scenes
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("잘못된 입력입니다.");
+                Console.WriteLine();
                 PromptPotionSelection();
             }
         }
@@ -129,6 +140,67 @@ namespace OOPConsoleProject.Scenes
             else
             {
                 Console.WriteLine("잘못된 포션 인덱스입니다.");
+            }
+        }
+
+        public void PromptGearSelection()
+        {
+            if (player.gearInventory.Count == 0)
+            {
+                Console.WriteLine("인벤토리에 방어구가 없습니다.");
+                game?.EndBattle();
+                return;
+            }
+
+            Console.WriteLine("장착할 방어구를 선택하세요");
+
+            for (int i = 0; i < player.gearInventory.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {player.gearInventory[i].name} (방어력: {player.gearInventory[i].defensivePower})");
+            }
+            Console.WriteLine("0. 장착하지 않고 나가기");
+
+            var key = Console.ReadKey(true).Key;
+
+            if (key == ConsoleKey.D0)
+            {
+                Console.WriteLine("방어구 장착이 취소되었습니다. 되돌아 갑니다.");
+                Thread.Sleep(2000);
+                game.ChangeScene(SceneType.Shop);
+                return;
+            }
+
+            int index = (int)key - (int)ConsoleKey.D1;
+
+            if (index >= 0 && index < player.gearInventory.Count)
+            {
+                EquipGear(index);
+                Console.WriteLine();
+                PromptGearSelection();
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("잘못된 입력입니다.");
+                Console.WriteLine();
+                PromptGearSelection();
+            }
+        }
+
+        public void EquipGear(int index)
+        {
+            if (index >= 0 && index < player.gearInventory.Count)
+            {
+                var gear = player.gearInventory[index];
+                game.player.Defense += gear.defensivePower;
+
+                player.gearInventory.RemoveAt(index);
+                Console.WriteLine($"{gear.name}을(를) 장착했습니다. 현재 방어력: {game.player.Defense}");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("잘못된 방어구 인덱스입니다.");
             }
         }
     }

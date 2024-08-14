@@ -38,7 +38,7 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Buying)
             {
-                Console.Write("[ 1. 물건 구입하기 | 2. 인벤토리 확인하기 | 3. 돌아가기 ]: ");
+                Console.Write("[ 1. 포션 구입하기 | 2. 장비 구입하기 | 3. 인벤토리 확인하기 | 4. 돌아가기 ]: ");
             }
             else if (curState == State.Confirm)
             {
@@ -65,9 +65,13 @@ namespace OOPConsoleProject.Scenes
                     ShowPotionOptions();
                     break;
                 case "2":
-                    game.ChangeScene(SceneType.Inventory);
+                    curState = State.Buying;
+                    ShowGearOptions();
                     break;
                 case "3":
+                    game.ChangeScene(SceneType.Inventory);
+                    break;
+                case "4":
                     Exit();
                     break;
                 default:
@@ -89,6 +93,18 @@ namespace OOPConsoleProject.Scenes
             Console.Write("구입할 포션 번호: ");
             string potionInput = Console.ReadLine();
             BuyPotion(potionInput);
+        }
+
+        private void ShowGearOptions()
+        {
+            Console.Clear();
+            Console.WriteLine("구입할 방어구를 선택하세요");
+            Console.WriteLine("1. 진화의 휘석 - 3000골드");
+            Console.WriteLine("2. 돌격 조끼 - 5000골드");
+            Console.WriteLine("3. 은밀 망토 - 7000골드");
+            Console.Write("구입할 방어구 번호: ");
+            string gearInput = Console.ReadLine();
+            BuyGear(gearInput);
         }
 
         private void BuyPotion(string potionInput)
@@ -135,6 +151,49 @@ namespace OOPConsoleProject.Scenes
                     game.player.Gold -= price;
                     player.AddItemToInventory(potion);
                     Console.WriteLine($"{itemName}을(를) 구매하였습니다.");
+                    Thread.Sleep(2000);
+                    curState = State.Confirm;
+                }
+            }
+            else
+            {
+                Console.WriteLine("골드가 부족합니다.");
+                Thread.Sleep(2000);
+            }
+        }
+
+        private void BuyGear(string gearInput)
+        {
+            int price = 0;
+            string gearName = "";
+
+            switch (gearInput)
+            {
+                case "1":
+                    gearName = "진화의 휘석";
+                    price = 3000;
+                    break;
+                case "2":
+                    gearName = "돌격 조끼";
+                    price = 5000;
+                    break;
+                case "3":
+                    gearName = "은밀 망토";
+                    price = 7000;
+                    break;
+                default:
+                    Console.WriteLine("잘못된 번호입니다.");
+                    return;
+            }
+
+            if (player.Gold >= 0)
+            {
+                DefensiveGear gear = Factory.InstantiateGear(gearName);
+                if (gear != null)
+                {
+                    game.player.Gold -= price;
+                    player.AddGearToInventory(gear);
+                    Console.WriteLine($"{gearName}을(를) 구매하였습니다.");
                     Thread.Sleep(2000);
                     curState = State.Confirm;
                 }

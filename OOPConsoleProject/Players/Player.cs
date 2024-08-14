@@ -48,7 +48,9 @@ namespace OOPConsoleProject.Players
         }
 
         public List<Item> inventory;
+        public List<DefensiveGear> gearInventory;
         private Game game;
+
         public Player(Game game)
         {
             this.game = game;
@@ -57,12 +59,19 @@ namespace OOPConsoleProject.Players
         public Player()
         {
             inventory = new List<Item>();
+            gearInventory = new List<DefensiveGear>();
         }
 
         public void AddItemToInventory(Item item)
         {
             inventory.Add(item);
-            Console.WriteLine($"{item.name}가 인벤토리에 추가되었습니다.");
-        }  
+            Console.WriteLine($"{item.name}이(가) 인벤토리에 추가되었습니다.");
+        }
+
+        public void AddGearToInventory(DefensiveGear gear)
+        {
+            gearInventory.Add(gear);
+            Console.WriteLine($"{gear.name}이(가) 인벤토리에 추가되었습니다.");
+        }
     }
 }

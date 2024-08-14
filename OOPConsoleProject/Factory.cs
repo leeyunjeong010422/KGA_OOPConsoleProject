@@ -35,7 +35,7 @@
             }
         }
 
-        public static DefensiveGear Instantiate2(string name)
+        public static DefensiveGear InstantiateGear(string name)
         {
             if (name == "진화의 휘석")
             {
