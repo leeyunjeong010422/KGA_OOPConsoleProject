@@ -8,6 +8,7 @@ namespace OOPConsoleProject.Scenes
 {
     internal class ClearScene : Scene
     {
+        private string input;
         public ClearScene(Game game) : base(game)
         {
 
@@ -15,27 +16,28 @@ namespace OOPConsoleProject.Scenes
 
         public override void Enter()
         {
-            throw new NotImplementedException();
+
         }
 
         public override void Exit()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void Input()
         {
-            throw new NotImplementedException();
+            Environment.Exit(0);
         }
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            Console.WriteLine("게임 클리어!");
         }
 
         public override void Update()
         {
-            throw new NotImplementedException();
+
         }
     }
 }
