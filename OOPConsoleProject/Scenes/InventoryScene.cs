@@ -30,7 +30,6 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("아무 키나 입력하면 계속 진행됩니다.");
             Console.ReadKey();
             curState = State.Choice;
-            Render();
         }
 
         public override void Exit()
@@ -86,7 +85,7 @@ namespace OOPConsoleProject.Scenes
                 else
                 {
                     Console.WriteLine("잘못된 입력입니다. 다시 선택해주세요.");
-                    Render();
+                    
                 }
             }
         }
@@ -116,7 +115,6 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("인벤토리에 포션이 없습니다.");
                 Thread.Sleep(2000);
                 curState = State.Choice;
-                Render();
                 return;
             }
 
@@ -133,7 +131,6 @@ namespace OOPConsoleProject.Scenes
             if (input == "0")
             {
                 curState = State.Choice;
-                Render();
             }
             else if (int.TryParse(input, out int index) && index >= 1 && index <= player.inventory.Count)
             {
@@ -161,7 +158,6 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
 
             curState = State.Choice; 
-            Render();
         }
 
         public void PromptGearSelection()
@@ -171,7 +167,6 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("인벤토리에 방어구가 없습니다.");
                 Thread.Sleep(2000);
                 curState = State.Choice; 
-                Render();
                 return;
             }
 
@@ -187,7 +182,6 @@ namespace OOPConsoleProject.Scenes
             if (input == "0")
             {
                 curState = State.Choice;
-                Render();
             }
             else if (int.TryParse(input, out int index) && index >= 1 && index <= player.gearInventory.Count)
             {
@@ -210,7 +204,6 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
 
             curState = State.Choice;
-            Render();
         }
     }
 }
