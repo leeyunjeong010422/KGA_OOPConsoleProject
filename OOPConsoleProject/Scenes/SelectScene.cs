@@ -79,7 +79,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
-                Console.WriteLine($"Gold : {player.Gold} G");
+                Console.WriteLine($"Gold : {game.Player.Gold} G");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("===================");
                 Console.ResetColor();

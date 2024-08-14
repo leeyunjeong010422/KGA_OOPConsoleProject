@@ -63,6 +63,7 @@ namespace OOPConsoleProject.Scenes
                     currentMonster.hp = 0;
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
                     game.Player.Gold += 2000;
+                   // Console.WriteLine($"현재 골드: {game.Player.Gold}");
                     Console.WriteLine("몬스터 처치 보상으로 2000 Gold를 획득하셨습니다.");
                     game.EndBattle();
                 }

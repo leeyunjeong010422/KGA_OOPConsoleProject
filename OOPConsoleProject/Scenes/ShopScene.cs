@@ -1,5 +1,4 @@
 ﻿using OOPConsoleProject.Players;
-using OOPConsoleProject;
 
 namespace OOPConsoleProject.Scenes
 {
@@ -25,6 +24,7 @@ namespace OOPConsoleProject.Scenes
         public override void Exit()
         {
             Console.WriteLine("아무 키나 눌러서 상점을 나가세요.");
+            curState = State.Exit;
         }
 
         public override void Input()
@@ -43,7 +43,7 @@ namespace OOPConsoleProject.Scenes
             else if (curState == State.Confirm)
             {
                 Console.WriteLine("아무 키나 눌러서 메인으로 돌아가세요.");
-                curState = State.Buying; 
+                curState = State.Buying;
             }
             else if (curState == State.Exit)
             {
@@ -54,21 +54,21 @@ namespace OOPConsoleProject.Scenes
         public override void Update()
         {
 
-        }   
+        }
 
         private void ProcessInput(string input)
         {
             switch (input)
             {
                 case "1":
-                    curState = State.Buying; 
+                    curState = State.Buying;
                     ShowPotionOptions();
                     break;
                 case "2":
-                    game.ChangeScene(SceneType.Inventory); 
+                    game.ChangeScene(SceneType.Inventory);
                     break;
                 case "3":
-                    curState = State.Exit;
+                    Exit();
                     break;
                 default:
                     Console.WriteLine("잘못된 입력입니다. 다시 입력해주세요.");
@@ -93,34 +93,34 @@ namespace OOPConsoleProject.Scenes
 
         private void BuyPotion(string potionInput)
         {
-            int Gold = 0;
-            string potionName = "";
+            int price = 0;
+            string itemName = "";
 
             switch (potionInput)
-            {               
+            {
                 case "1":
-                    potionName = "초급포션";
-                    Gold = 1000;
+                    itemName = "초급포션";
+                    price = 1000;
                     break;
                 case "2":
-                    potionName = "중급포션";
-                    Gold = 2000;
+                    itemName = "중급포션";
+                    price = 2000;
                     break;
                 case "3":
-                    potionName = "고급포션";
-                    Gold = 3000;
+                    itemName = "고급포션";
+                    price = 3000;
                     break;
                 case "4":
-                    potionName = "맛있는 물";
-                    Gold = 2000;
+                    itemName = "맛있는 물";
+                    price = 2000;
                     break;
                 case "5":
-                    potionName = "미네랄 사이다";
-                    Gold = 2000;
+                    itemName = "미네랄 사이다";
+                    price = 2000;
                     break;
                 case "6":
-                    potionName = "후르츠밀크";
-                    Gold = 2000;
+                    itemName = "후르츠밀크";
+                    price = 2000;
                     break;
                 default:
                     Console.WriteLine("잘못된 번호입니다.");
@@ -129,12 +129,12 @@ namespace OOPConsoleProject.Scenes
 
             if (player.Gold >= 0)
             {
-                Item potion = ItemFactory.Instantiate(potionName);
+                Item potion = ItemFactory.Instantiate(itemName);
                 if (potion != null)
                 {
-                    player.Gold -= Gold;
-                    player.AddItemToInventory(potion); 
-                    Console.WriteLine($"{potionName}을(를) 구매하였습니다.");  
+                    game.player.Gold -= price;
+                    player.AddItemToInventory(potion);
+                    Console.WriteLine($"{itemName}을(를) 구매하였습니다.");
                     Thread.Sleep(2000);
                     curState = State.Confirm;
                 }

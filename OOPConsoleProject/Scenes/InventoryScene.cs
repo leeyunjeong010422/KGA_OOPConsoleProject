@@ -1,4 +1,5 @@
-﻿using OOPConsoleProject.Players;
+﻿using OOPConsoleProject.Interface;
+using OOPConsoleProject.Players;
 
 namespace OOPConsoleProject.Scenes
 {
@@ -20,14 +21,15 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("인벤토리를 열고 있습니다.");
             Thread.Sleep(2000);
             Console.Clear();
-            player.ShowInventory();
+            ShowInventory();
             Console.WriteLine();
-            player.PromptPotionSelection();
+            PromptPotionSelection();
+
         }
 
         public override void Exit()
         {
-
+            //game.ChangeScene(SceneType.Shop);
         }
 
         public override void Input()
@@ -43,6 +45,92 @@ namespace OOPConsoleProject.Scenes
         public override void Update()
         {
 
+        }
+
+        public void ShowInventory()
+        {
+            Console.WriteLine("<인벤토리>");
+            foreach (var item in player.inventory)
+            {
+                Console.WriteLine($"{item.name} (회복량: {item.hp})");
+            }
+        }
+
+        public void PromptPotionSelection()
+        {
+            if (player.inventory.Count == 0)
+            {
+                Console.WriteLine("인벤토리에 포션이 없습니다.");
+                game?.EndBattle();
+                return;
+            }
+
+            Console.WriteLine("사용할 포션을 선택하세요");
+
+            for (int i = 0; i < player.inventory.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {player.inventory[i].name} (회복량: {player.inventory[i].hp})");
+            }
+            Console.WriteLine("0. 사용하지 않고 나가기");
+
+            var key = Console.ReadKey(true).Key;
+
+            if (key == ConsoleKey.D0)
+            {
+                Console.WriteLine("포션 사용이 취소되었습니다. 되돌아 갑니다.");
+                Thread.Sleep(2000);
+                game.ChangeScene(SceneType.Shop);
+                return;
+            }
+
+            int index = (int)key - (int)ConsoleKey.D1;
+
+            if (index >= 0 && index < player.inventory.Count)
+            {
+                UsePotion(index);
+                Console.WriteLine();
+                PromptPotionSelection();
+            }
+            else
+            {
+                Console.WriteLine("잘못된 입력입니다.");
+                PromptPotionSelection();
+            }
+        }
+
+        public void UsePotion(int index)
+        {
+            if (index >= 0 && index < player.inventory.Count)
+            {
+                var potion = player.inventory[index];
+                game.player.CurHP += potion.hp;
+
+                if (game.player.CurHP > game.player.MaxHP)
+                {
+                    game.player.CurHP = game.player.MaxHP;
+                }
+
+                player.inventory.RemoveAt(index);
+                Console.WriteLine($"{potion.name}을(를) 사용했습니다. 현재 체력: {game.player.CurHP}");
+                Console.WriteLine();
+
+                if (player.inventory.Count == 0)
+                {
+                    Console.WriteLine("인벤토리에 더 이상 포션이 없습니다.");
+                    Thread.Sleep(2000);
+                    game.EndBattle(); 
+                }
+                else
+                {
+                    Console.WriteLine();
+                    PromptPotionSelection(); 
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("잘못된 포션 인덱스입니다.");
+            }
         }
     }
 }
