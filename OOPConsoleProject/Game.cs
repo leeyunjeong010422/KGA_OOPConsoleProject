@@ -86,7 +86,6 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this, player);
             scenes[(int)SceneType.Shop] = new ShopScene(this, player);
-            scenes[(int)SceneType.GameOver] = new GameOverScene(this);
             scenes[(int)SceneType.Clear] = new ClearScene(this);
             scenes[(int)SceneType.Return] = new ReturnScene(this);
 
