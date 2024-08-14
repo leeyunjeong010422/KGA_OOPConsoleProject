@@ -1,4 +1,5 @@
 ﻿
+using OOPConsoleProject.Scenes;
 using System.Numerics;
 
 namespace OOPConsoleProject.Players
@@ -62,24 +63,6 @@ namespace OOPConsoleProject.Players
         {
             inventory.Add(item);
             Console.WriteLine($"{item.name}가 인벤토리에 추가되었습니다.");
-        }
-
-        public void ShowInfo()
-        {
-            Console.SetCursorPosition(0, 20);
-            Console.WriteLine("==========================================");
-            Console.WriteLine($" 이름 : {name,-6} 캐릭터 : {job,-6}");
-            Console.WriteLine($" 체력 : {curHP,+3} / {maxHP}  공격 : {attack,-3} / 방어 : {defense,-3}");
-            Console.WriteLine($" 골드 : {Gold,+5} G");
-            Console.WriteLine("==========================================");
-            Console.WriteLine();
-            Console.SetCursorPosition(0, 0);
-        }
-
-        public void AddItem(Item item)
-        {
-            inventory.Add(item);
-        }        
-
+        }  
     }
 }

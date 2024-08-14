@@ -15,8 +15,8 @@ namespace OOPConsoleProject.Players
             this.job = Job.한지우;
             this.maxHP = 100;
             this.curHP = maxHP;
-            this.attack = 50;
-            this.defense = 50;
+            this.attack = 70;
+            this.defense = 20;
             this.gold = 10000;
         }
     }

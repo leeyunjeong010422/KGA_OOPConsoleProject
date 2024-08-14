@@ -10,7 +10,7 @@ namespace OOPConsoleProject.Players
             this.job = Job.웅이;
             this.maxHP = 100;
             this.curHP = maxHP;
-            this.attack = 50;
+            this.attack = 30;
             this.defense = 50;
             this.gold = 10000;
         }
