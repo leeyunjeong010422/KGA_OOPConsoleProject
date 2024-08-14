@@ -88,6 +88,7 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Shop] = new ShopScene(this, player);
             scenes[(int)SceneType.GameOver] = new GameOverScene(this);
             scenes[(int)SceneType.Clear] = new ClearScene(this);
+            scenes[(int)SceneType.Return] = new ReturnScene(this);
 
             curScene = scenes[(int)SceneType.Title];
             curScene.Enter();

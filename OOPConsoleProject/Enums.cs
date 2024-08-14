@@ -1,6 +1,6 @@
 ﻿namespace OOPConsoleProject
 {
-    public enum SceneType { Title, Select, Map, Map1, Map2, Map3, Battle, Inventory, Shop, GameOver, Clear, Size }
+    public enum SceneType { Title, Select, Map, Map1, Map2, Map3, Battle, Inventory, Shop, GameOver, Clear, Return, Size }
 
     public enum Job { 한지우 = 1, 최이슬, 웅이, 봄이 }
 
