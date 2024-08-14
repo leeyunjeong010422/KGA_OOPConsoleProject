@@ -1,7 +1,7 @@
 ﻿namespace OOPConsoleProject
 {
     //상점에서 살 수 있는 아이템들
-    public class ItemFactory
+    public class Factory
     {
         public static Item Instantiate(string name)
         {
@@ -31,7 +31,26 @@
             }
             else
             {
-                Console.WriteLine("해당 이름의 아이템이 없습니다.");
+                return null;
+            }
+        }
+
+        public static DefensiveGear Instantiate2(string name)
+        {
+            if (name == "진화의 휘석")
+            {
+                return new Gear("진화의 휘석", 20);
+            }
+            else if (name == "돌격 조끼")
+            {
+                return new Gear("돌격 조끼", 30);
+            }
+            else if (name == "은밀 망토")
+            {
+                return new Gear("은밀 망토", 40);
+            }
+            else
+            {
                 return null;
             }
         }
@@ -49,6 +68,18 @@
         }
     }
 
+    public class DefensiveGear
+    {
+        public string name { get; set; }
+        public int defensivePower { get; set; }
+
+        public DefensiveGear (string name, int defensivePower)
+        {
+            this.name = name;
+            this.defensivePower = defensivePower;
+        }
+    }
+
     public class Potion : Item
     {
         public Potion(string name, int hp) : base(name, hp)
@@ -59,6 +90,14 @@
     public class Drinking : Item
     {
         public Drinking(string name, int hp) : base(name, hp)
+        {
+
+        }
+    }
+
+    public class Gear : DefensiveGear
+    {
+        public Gear(string name, int defensivePower) : base(name, defensivePower)
         {
 
         }

@@ -129,7 +129,7 @@ namespace OOPConsoleProject.Scenes
 
             if (player.Gold >= 0)
             {
-                Item potion = ItemFactory.Instantiate(itemName);
+                Item potion = Factory.Instantiate(itemName);
                 if (potion != null)
                 {
                     game.player.Gold -= price;
