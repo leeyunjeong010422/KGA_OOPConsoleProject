@@ -33,13 +33,17 @@ namespace OOPConsoleProject.Scenes
         {
             maze = new char[,]
             {
-                {'#', '#', '#', '#', '#', '#'},
-                {'#', ' ', ' ', '#', '#', '#'},
-                {'#', ' ', '#', ' ', '#', '#'},
-                {'#', ' ', ' ', ' ', ' ', '#'},
-                {'#', '#', '#', '#', ' ', '#'}
+        {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+        {'#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', '#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+        {'#', ' ', '#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#', '#', ' ', '#', '#', '#', '#', ' ', '#', '#', '#', ' ', '#', '#', '#', '#', ' ', '#', '#'},
+        {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+        {'#', ' ', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+        {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+        {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', ' ', '#'}
             };
         }
+
+
 
         private void InitializeMonsters()
         {
@@ -67,7 +71,6 @@ namespace OOPConsoleProject.Scenes
         {
 
         }
-
         public override void Input()
         {
             var key = Console.ReadKey(true).Key;
@@ -81,8 +84,8 @@ namespace OOPConsoleProject.Scenes
             }
             else if (key == ConsoleKey.D0)
             {
-                player.ShowInventory();
-                player.PromptPotionSelection();
+                Console.Clear();
+                UseInventory();
             }
             else
             {
@@ -90,29 +93,11 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
+        private bool isInitialized = false; 
+
         public override void Render()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("===================");
-            Console.ResetColor();
-            Console.WriteLine($"이름 : {game.Player.Name}");
-            Console.WriteLine($"캐릭터 : {game.Player.Job}");
-            Console.WriteLine($"포켓몬 : {SelectScene.selectedPoketMonster}");
-            Console.WriteLine($"체력 : {game.Player.MaxHP}");
-            Console.WriteLine($"공격 : {game.Player.Attack}");
-            Console.WriteLine($"방어 : {game.Player.Defense}");
-            Console.WriteLine($"Gold : {player.Gold} G");
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("===================");
-            Console.ResetColor();
-            Console.WriteLine();
-
-            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
-            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
-            Console.WriteLine("[ 0번: 포션 먹기 ]");
-            Console.WriteLine();
-
 
             for (int i = 0; i < maze.GetLength(0); i++)
             {
@@ -129,7 +114,28 @@ namespace OOPConsoleProject.Scenes
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine("캐릭터는 방향키로 움직입니다.");
+            Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
+            Console.WriteLine("[ 0번: 포션 먹기 ]");
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("===================");
+            Console.ResetColor();
+            Console.WriteLine($"이름 : {game.Player.Name}");
+            Console.WriteLine($"캐릭터 : {game.Player.Job}");
+            Console.WriteLine($"포켓몬 : {SelectScene.selectedPoketMonster}");
+            Console.WriteLine($"체력 : {game.Player.CurHP}");
+            Console.WriteLine($"공격 : {game.Player.Attack}");
+            Console.WriteLine($"방어 : {game.Player.Defense}");
+            Console.WriteLine($"Gold : {game.player.Gold} G");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("===================");
+            Console.ResetColor();
+            Console.WriteLine();
         }
+
 
         public override void Update()
         {
@@ -230,6 +236,14 @@ namespace OOPConsoleProject.Scenes
                     game.ChangeScene(SceneType.Map1);
                 }
             }
+        }
+
+        public void UseInventory()
+        {
+            InventoryScene inventoryScene = new InventoryScene(game, player);
+            inventoryScene.ShowInventory();
+            Console.WriteLine();
+            inventoryScene.PromptPotionSelection();
         }
     }
 }
