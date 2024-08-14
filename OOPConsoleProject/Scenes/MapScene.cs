@@ -156,8 +156,10 @@ namespace OOPConsoleProject.Scenes
                 }
                 Console.WriteLine();
             }
-
-            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("                <현 위치: 관동지방>");
+            Console.ResetColor();
+            Console.WriteLine();            
             Console.WriteLine("캐릭터는 방향키로 움직입니다.");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");

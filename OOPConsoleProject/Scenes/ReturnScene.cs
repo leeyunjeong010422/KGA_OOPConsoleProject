@@ -26,9 +26,12 @@
         public override void Render()
         {
             Console.Clear();
-            Console.WriteLine("어느 맵으로 돌아가시겠습니까?");
-            Console.WriteLine("마지막 단계로는 이동할 수 없습니다.");
-            Console.Write("[ 1. 1단계 | 2. 2단계 ]: ");
+            Console.WriteLine("어느 마을로 돌아가시겠습니까?");
+            Console.WriteLine("* 마지막 마을은 이동할 수 없습니다 *");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("[ 1. 관동지방 | 2. 성도지방 ]: ");
+            Console.ResetColor();
         }
 
         public override void Update()
