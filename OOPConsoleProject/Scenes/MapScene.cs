@@ -16,6 +16,7 @@ namespace OOPConsoleProject.Scenes
 
         private List<(int x, int y)> monsters;
         private List<(int x, int y)> goal;
+        private List<(int x, int y)> potion;
         private Player player;
 
         public MapScene(Game game, Player player) : base(game)
@@ -23,6 +24,7 @@ namespace OOPConsoleProject.Scenes
             InitializeMaze();
             InitializeMonsters();
             InitializeGoal();
+            InitializePotion();
             playerX = 1;
             playerY = 1;
             this.game = game;
@@ -34,14 +36,15 @@ namespace OOPConsoleProject.Scenes
             maze = new char[,]
             {
         {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
-        {'#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', '#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
-        {'#', ' ', '#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#', '#', ' ', '#', '#', '#', '#', ' ', '#', '#', '#', ' ', '#', '#', '#', '#', ' ', '#', '#'},
-        {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
-        {'#', ' ', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
-        {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+        {'#', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', '#'},
+        {'#', ' ', '#', ' ', ' ', ' ', '#', '#', ' ', '#', ' ', '#', ' ', ' ', '#', '#', '#', ' ', '#', ' ', '#', ' ', '#', '#', '#', ' ', '#', '#', ' ', '#'},
+        {'#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#'},
+        {'#', ' ', '#', '#', '#', '#', ' ', ' ', ' ', '#', '#', '#', ' ', '#', '#', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', '#', '#', '#', '#', ' ', '#', '#'},
+        {'#', ' ', ' ', ' ', ' ', '#', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
         {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', ' ', '#'}
             };
         }
+
 
 
 
@@ -49,7 +52,7 @@ namespace OOPConsoleProject.Scenes
         {
             monsters = new List<(int x, int y)>
             {
-                (3, 2)
+                (3, 3), (7, 5), (10, 3), (16, 5), (25, 2)
             };
         }
 
@@ -57,7 +60,15 @@ namespace OOPConsoleProject.Scenes
         {
             goal = new List<(int x, int y)>
             {
-                (4, 4)
+                (28, 6)
+            };
+        }
+
+        private void InitializePotion()
+        {       
+            potion = new List<(int x, int y)>
+            {
+                (11, 3), (21,1)
             };
         }
 
@@ -99,6 +110,24 @@ namespace OOPConsoleProject.Scenes
         {
             Console.Clear();
 
+            char[,] displayMaze = (char[,])maze.Clone();
+
+            foreach (var p in potion)
+            {
+                if (p.y >= 0 && p.y < displayMaze.GetLength(0) && p.x >= 0 && p.x < displayMaze.GetLength(1))
+                {
+                    displayMaze[p.y, p.x] = 'X';
+                }
+            }
+
+            foreach (var m in monsters)
+            {
+                if (m.y >= 0 && m.y < displayMaze.GetLength(0) && m.x >= 0 && m.x < displayMaze.GetLength(1))
+                {
+                    displayMaze[m.y, m.x] = 'M';
+                }
+            }
+
             for (int i = 0; i < maze.GetLength(0); i++)
             {
                 for (int j = 0; j < maze.GetLength(1); j++)
@@ -109,12 +138,26 @@ namespace OOPConsoleProject.Scenes
                         Console.Write("P ");
                         Console.ResetColor();
                     }
+                    else if (displayMaze[i, j] == 'X')
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write("X ");
+                        Console.ResetColor();
+                    }
+                    else if (displayMaze[i, j] == 'M')
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.Write("M ");
+                        Console.ResetColor();
+                    }
+
                     else
                         Console.Write(maze[i, j] + " ");
                 }
                 Console.WriteLine();
             }
 
+            Console.WriteLine();
             Console.WriteLine("캐릭터는 방향키로 움직입니다.");
             Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
             Console.WriteLine("[ 0번: 포션 먹기 ]");
@@ -234,6 +277,7 @@ namespace OOPConsoleProject.Scenes
                 if (playerX == goal.x && playerY == goal.y)
                 {
                     game.ChangeScene(SceneType.Map1);
+                    break;
                 }
             }
         }
