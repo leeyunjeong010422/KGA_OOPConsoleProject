@@ -25,12 +25,12 @@ namespace OOPConsoleProject.Scenes
 
         public override void Input()
         {
-            
+            Environment.Exit(0);
         }
 
         public override void Render()
         {
-            
+            Console.WriteLine("게임 오버!");
         }
 
         public override void Update()
