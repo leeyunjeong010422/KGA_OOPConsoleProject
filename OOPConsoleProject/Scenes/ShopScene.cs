@@ -143,7 +143,7 @@ namespace OOPConsoleProject.Scenes
                     return;
             }
 
-            if (player.Gold >= 0)
+            if (game.player.Gold >= price)
             {
                 Item potion = Factory.Instantiate(itemName);
                 if (potion != null)
@@ -186,7 +186,7 @@ namespace OOPConsoleProject.Scenes
                     return;
             }
 
-            if (player.Gold >= 0)
+            if (game.player.Gold >= price)
             {
                 DefensiveGear gear = Factory.InstantiateGear(gearName);
                 if (gear != null)
@@ -204,5 +204,7 @@ namespace OOPConsoleProject.Scenes
                 Thread.Sleep(2000);
             }
         }
+
+
     }
 }

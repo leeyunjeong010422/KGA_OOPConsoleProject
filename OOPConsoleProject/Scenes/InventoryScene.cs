@@ -4,6 +4,11 @@ namespace OOPConsoleProject.Scenes
 {
     public class InventoryScene : Scene
     {
+        public enum State { Choice, PotionEffect, EquipGear }
+        private State curState;
+
+        private string input;
+
         private Game game;
         private Player player;
 
@@ -22,28 +27,66 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             ShowInventory();
             Console.WriteLine();
-            PromptPotionSelection();
+            ShowGearInventory();
+            Console.WriteLine();
+            Console.WriteLine("아무 키나 입력하면 계속 진행됩니다.");
+            Console.ReadKey();
+            curState = State.Choice;
+
 
         }
 
         public override void Exit()
         {
-            //game.ChangeScene(SceneType.Shop);
+            
         }
 
         public override void Input()
         {
-            
+            input = Console.ReadLine();
         }
 
         public override void Render()
         {
-
+            Console.Clear();
+            if (curState == State.Choice)
+            {
+                Console.WriteLine("무엇을 하시겠습니까?");
+                Console.Write("[ 1. 포션 먹기(hp 회복) | 2. 장비 착용하기(방어력 증가) | 3. 돌아가기 ]");
+            }
+            else if (curState == State.PotionEffect)
+            {
+                ShowInventory();
+                Console.WriteLine();
+                PromptPotionSelection();
+            }
+            else if (curState == State.EquipGear)
+            {
+                ShowGearInventory();
+                Console.WriteLine();
+                PromptGearSelection();
+            }
         }
 
         public override void Update()
         {
-
+            if (curState == State.Choice)
+            {
+                if (input == string.Empty)
+                    return;
+                if (input == "1")
+                {
+                    curState = State.PotionEffect;
+                }
+                else if (input == "2")
+                {
+                    curState = State.EquipGear;
+                }
+                else if (input == "3")
+                {
+                    game.EndBattle();
+                }
+            }
         }
 
         public void ShowInventory()
