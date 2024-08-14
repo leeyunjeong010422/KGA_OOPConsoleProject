@@ -65,7 +65,7 @@ namespace OOPConsoleProject.Scenes
         }
 
         private void InitializePotion()
-        {       
+        {
             potion = new List<(int x, int y)>
             {
                 (11, 3), (21,1)
@@ -104,7 +104,7 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        private bool isInitialized = false; 
+        private bool isInitialized = false;
 
         public override void Render()
         {
@@ -159,22 +159,22 @@ namespace OOPConsoleProject.Scenes
 
             Console.WriteLine();
             Console.WriteLine("캐릭터는 방향키로 움직입니다.");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리열기 ]");
             Console.WriteLine("[ 0번: 포션 먹기 ]");
+            Console.ResetColor();
             Console.WriteLine();
 
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("===================");
+            Console.WriteLine("========================================================");
             Console.ResetColor();
-            Console.WriteLine($"이름 : {game.Player.Name}");
-            Console.WriteLine($"캐릭터 : {game.Player.Job}");
-            Console.WriteLine($"포켓몬 : {SelectScene.selectedPoketMonster}");
-            Console.WriteLine($"체력 : {game.Player.CurHP}");
-            Console.WriteLine($"공격 : {game.Player.Attack}");
-            Console.WriteLine($"방어 : {game.Player.Defense}");
-            Console.WriteLine($"Gold : {game.player.Gold} G");
+            Console.WriteLine($" 이름 : {game.Player.Name,-6} 캐릭터 : {game.Player.Job,-6} 포켓몬: {SelectScene.selectedPoketMonster}");
+            Console.WriteLine($" 체력 : {game.Player.CurHP,+3} / {game.Player.MaxHP}");
+            Console.WriteLine($" 공격력 : {game.Player.Attack,-3} 방어력 : {game.Player.Defense,-3}");
+            Console.WriteLine($" 골드 : {game.player.Gold,+5} G");
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("===================");
+            Console.WriteLine("========================================================");
             Console.ResetColor();
             Console.WriteLine();
         }

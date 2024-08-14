@@ -53,7 +53,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("플레이할 캐릭터를 선택하세요.");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("1. 한지우");
+                Console.WriteLine($"1. 한지우");
                 Console.WriteLine("2. 최이슬");
                 Console.WriteLine("3. 웅이");
                 Console.WriteLine("4. 봄이");
