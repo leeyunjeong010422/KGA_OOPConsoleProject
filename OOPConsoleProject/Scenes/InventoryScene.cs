@@ -20,6 +20,7 @@ namespace OOPConsoleProject.Scenes
 
         public override void Enter()
         {
+            input = 0.ToString();
             Console.Clear();
             Console.WriteLine("인벤토리를 열고 있습니다.");
             Thread.Sleep(2000);
@@ -34,13 +35,12 @@ namespace OOPConsoleProject.Scenes
 
         public override void Exit()
         {
-            
+
         }
 
         public override void Input()
         {
             input = Console.ReadLine();
-            Update();
         }
 
         public override void Render()
@@ -54,12 +54,23 @@ namespace OOPConsoleProject.Scenes
             else if (curState == State.PotionEffect)
             {
                 ShowInventory();
-                PromptPotionSelection();
+                Console.WriteLine();
+                Console.WriteLine("사용할 포션을 선택하세요");
+                for (int i = 0; i < player.inventory.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {player.inventory[i].name} (회복량: {player.inventory[i].hp})");
+                }
+                Console.WriteLine("0. 사용하지 않고 나가기");
             }
             else if (curState == State.EquipGear)
             {
                 ShowGearInventory();
-                PromptGearSelection();
+                Console.WriteLine("장착할 방어구를 선택하세요:");
+                for (int i = 0; i < player.gearInventory.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {player.gearInventory[i].name} (방어력: {player.gearInventory[i].defensivePower})");
+                }
+                Console.WriteLine("0. 장착하지 않고 나가기");
             }
         }
 
@@ -82,10 +93,38 @@ namespace OOPConsoleProject.Scenes
                 {
                     game.ChangeScene(SceneType.Return);
                 }
+            }
+            else if (curState == State.PotionEffect)
+            {
+                if (input == "0")
+                {
+                    curState = State.Choice;
+                }
+
+                else if (int.TryParse(input, out int index) && index >= 1 && index <= player.inventory.Count)
+                {
+                    UsePotion(index - 1);
+                    curState = State.Choice;
+                }
                 else
                 {
                     Console.WriteLine("잘못된 입력입니다. 다시 선택해주세요.");
-                    
+                }
+            }
+            else if (curState == State.EquipGear)
+            {
+                if (input == "0")
+                {
+                    curState = State.Choice;
+                }
+                else if (int.TryParse(input, out int index) && index >= 1 && index <= player.gearInventory.Count)
+                {
+                    EquipGear(index - 1);
+                    curState = State.Choice;                   
+                }
+                else
+                {
+                    Console.WriteLine("잘못된 입력입니다. 다시 선택해주세요.");
                 }
             }
         }
@@ -106,42 +145,7 @@ namespace OOPConsoleProject.Scenes
             {
                 Console.WriteLine($"{gear.name} (방어력: {gear.defensivePower})");
             }
-        }
-
-        public void PromptPotionSelection()
-        {
-            if (player.inventory.Count == 0)
-            {
-                Console.WriteLine("인벤토리에 포션이 없습니다.");
-                Thread.Sleep(2000);
-                curState = State.Choice;
-                return;
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("사용할 포션을 선택하세요");
-            for (int i = 0; i < player.inventory.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {player.inventory[i].name} (회복량: {player.inventory[i].hp})");
-            }
-            Console.WriteLine("0. 사용하지 않고 나가기");
-
-            input = Console.ReadLine();
-
-            if (input == "0")
-            {
-                curState = State.Choice;
-            }
-            else if (int.TryParse(input, out int index) && index >= 1 && index <= player.inventory.Count)
-            {
-                UsePotion(index - 1);
-            }
-            else
-            {
-                Console.WriteLine("잘못된 입력입니다. 다시 선택해주세요.");
-                PromptPotionSelection();
-            }
-        }
+        }      
 
         public void UsePotion(int index)
         {
@@ -157,43 +161,8 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine($"{potion.name}을(를) 사용했습니다. 현재 체력: {game.player.CurHP}");
             Thread.Sleep(2000);
 
-            curState = State.Choice; 
+            curState = State.Choice;
         }
-
-        public void PromptGearSelection()
-        {
-            if (player.gearInventory.Count == 0)
-            {
-                Console.WriteLine("인벤토리에 방어구가 없습니다.");
-                Thread.Sleep(2000);
-                curState = State.Choice; 
-                return;
-            }
-
-            Console.WriteLine("장착할 방어구를 선택하세요:");
-            for (int i = 0; i < player.gearInventory.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {player.gearInventory[i].name} (방어력: {player.gearInventory[i].defensivePower})");
-            }
-            Console.WriteLine("0. 장착하지 않고 나가기");
-
-            input = Console.ReadLine();
-
-            if (input == "0")
-            {
-                curState = State.Choice;
-            }
-            else if (int.TryParse(input, out int index) && index >= 1 && index <= player.gearInventory.Count)
-            {
-                EquipGear(index - 1);
-            }
-            else
-            {
-                Console.WriteLine("잘못된 입력입니다. 다시 선택해주세요.");
-                PromptGearSelection();
-            }
-        }
-
         public void EquipGear(int index)
         {
             var gear = player.gearInventory[index];
@@ -204,6 +173,29 @@ namespace OOPConsoleProject.Scenes
             Thread.Sleep(2000);
 
             curState = State.Choice;
+        }
+
+        public void PromptPotionSelection()
+        {
+            if (player.inventory.Count == 0)
+            {
+                Console.WriteLine("인벤토리에 포션이 없습니다.");
+                Thread.Sleep(2000);
+                curState = State.Choice;
+                return;
+            }
+
+        }
+
+        public void PromptGearSelection()
+        {
+            if (player.gearInventory.Count == 0)
+            {
+                Console.WriteLine("인벤토리에 방어구가 없습니다.");
+                Thread.Sleep(2000);
+                curState = State.Choice;
+                return;
+            }
         }
     }
 }
