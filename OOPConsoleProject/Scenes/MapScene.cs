@@ -8,7 +8,6 @@ namespace OOPConsoleProject.Scenes
         private char[,] maze;
         private int playerX;
         private int playerY;
-        public VillainMonster currentMonster;
         public class Point
         {
             public int x;

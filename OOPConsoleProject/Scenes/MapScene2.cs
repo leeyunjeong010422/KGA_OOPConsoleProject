@@ -179,6 +179,7 @@ namespace OOPConsoleProject.Scenes
         {
             CheckForMonster();
             CheckForGoal();
+            CheckForPotion();
         }
 
         private void Move(ConsoleKey key)
@@ -272,6 +273,26 @@ namespace OOPConsoleProject.Scenes
                 if (playerX == goal.x && playerY == goal.y)
                 {
                     game.ChangeScene(SceneType.Clear);
+                }
+            }
+        }
+
+        private void CheckForPotion()
+        {
+            for (int i = 0; i < potion.Count; i++)
+            {
+                if (playerX == potion[i].x && playerY == potion[i].y)
+                {
+                    player.AddPotionToInventory(new Potion("초급 포션", 30));
+
+                    potion.RemoveAt(i);
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("초급포션을 획득했습니다! 인벤토리에 추가되었습니다.");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+
+                    break;
                 }
             }
         }
