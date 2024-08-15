@@ -12,7 +12,7 @@ namespace OOPConsoleProject.Players
             this.curHP = maxHP;
             this.attack = 30;
             this.defense = 50;
-            this.gold = 10000;
+            this.gold = 2000;
         }
     }
 }
