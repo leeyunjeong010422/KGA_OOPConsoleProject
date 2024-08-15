@@ -86,7 +86,7 @@ namespace OOPConsoleProject.Scenes
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("2000 Gold");
                     Console.ResetColor();
-                    Console.Write("를 획득하셨습니다.");
+                    Console.WriteLine("를 획득하셨습니다.");
                     Console.WriteLine();
                     Console.WriteLine("[ 다음으로 넘어가려면 아무 키나 누르세요. ]");
                     game.EndBattle();
@@ -151,7 +151,7 @@ namespace OOPConsoleProject.Scenes
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("2000 Gold");
                     Console.ResetColor();
-                    Console.Write("를 획득하셨습니다.");
+                    Console.WriteLine("를 획득하셨습니다.");
                     Console.WriteLine();
                     Console.WriteLine("[ 다음으로 넘어가려면 아무 키나 누르세요. ]");
                     game.EndBattle();

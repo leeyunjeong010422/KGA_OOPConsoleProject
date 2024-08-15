@@ -46,11 +46,13 @@ namespace OOPConsoleProject.Scenes
             Console.Clear();
             if (curState == State.Name)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("캐릭터의 이름을 입력하세요: ");
+                Console.ResetColor();
             }
             else if (curState == State.Job)
             {
-                Console.WriteLine("플레이할 캐릭터를 선택하세요.");
+                Console.WriteLine("<플레이할 수 있는 캐릭터 목록>");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"1. 한지우");
@@ -59,7 +61,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine("4. 봄이");
                 Console.ResetColor();
                 Console.WriteLine();
-                Console.Write("입력: ");
+                Console.Write("플레이할 캐릭터 번호 입력: ");
             }
             else if (curState == State.PoketMonsterSelection)
             {
@@ -79,7 +81,7 @@ namespace OOPConsoleProject.Scenes
                 Console.WriteLine($"체력 : {game.Player.MaxHP}");
                 Console.WriteLine($"공격 : {game.Player.Attack}");
                 Console.WriteLine($"방어 : {game.Player.Defense}");
-                Console.WriteLine($"Gold : {game.Player.Gold} G");
+                Console.WriteLine($"Gold : {game.Player.Gold}G");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("===================");
                 Console.ResetColor();

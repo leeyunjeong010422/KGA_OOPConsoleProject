@@ -42,7 +42,7 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("           。　♡。 　　。　　♡。");
             Console.ResetColor();
             Console.WriteLine();
-            Console.WriteLine("      게임을 시작하려면 아무키나 누르세요.     ");
+            Console.WriteLine("    [ 게임을 시작하려면 아무키나 누르세요 ]     ");
         }
 
         public override void Update()
