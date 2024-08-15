@@ -78,7 +78,6 @@ namespace OOPConsoleProject.Scenes
                 if (currentMonster.hp <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine();
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
                     Console.ResetColor();
                     game.Player.Gold += 2000;
@@ -113,7 +112,6 @@ namespace OOPConsoleProject.Scenes
                     {
                         game.Player.CurHP = 0;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine();
                         Console.WriteLine($"{game.Player.Name}이(가) 쓰러졌습니다!");
                         Console.ResetColor();
                         Thread.Sleep(2000);
