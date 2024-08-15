@@ -142,7 +142,7 @@ namespace OOPConsoleProject.Scenes
                     case "Y":
                     case "y":
                     case "네":
-                        game.ChangeScene(SceneType.Map);
+                        game.ChangeScene(SceneType.Map1);
                         break;
                     case "N":
                     case "n":
