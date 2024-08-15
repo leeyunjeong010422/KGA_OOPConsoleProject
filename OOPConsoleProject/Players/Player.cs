@@ -87,5 +87,10 @@ namespace OOPConsoleProject.Players
             Console.WriteLine($"인벤토리에 추가되었습니다.");
             Thread.Sleep(1500);
         }
+
+        public void AddPotionToInventory(Item item)
+        {
+            inventory.Add(item);
+        }
     }
 }

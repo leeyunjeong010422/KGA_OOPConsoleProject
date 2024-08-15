@@ -1,4 +1,5 @@
 ﻿using OOPConsoleProject.Players;
+using OOPConsoleProject.VillainMonsters;
 
 namespace OOPConsoleProject.Scenes
 {
@@ -7,6 +8,7 @@ namespace OOPConsoleProject.Scenes
         private char[,] maze;
         private int playerX;
         private int playerY;
+        public VillainMonster currentMonster;
         public class Point
         {
             public int x;
@@ -68,7 +70,7 @@ namespace OOPConsoleProject.Scenes
         {
             potion = new List<(int x, int y)>
             {
-                (11, 3), (21,1)
+                (1, 3), (11, 3), (21,1)
             };
         }
 
@@ -178,6 +180,7 @@ namespace OOPConsoleProject.Scenes
         {
             CheckForMonster();
             CheckForGoal();
+            CheckForPotion();
         }
 
         private void Move(ConsoleKey key)
@@ -261,6 +264,18 @@ namespace OOPConsoleProject.Scenes
                     game.ChangeScene(SceneType.Battle);
                     break;
                 }
+            }                       
+        }
+
+        public void CheckForMonsterRemove()
+        {
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                if (playerX == monsters[i].x && playerY == monsters[i].y)
+                {
+                    monsters.RemoveAt(i);
+                    break;
+                }
             }
         }
 
@@ -276,12 +291,32 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        public void UseInventory()
+        private void CheckForPotion()
         {
-            InventoryScene inventoryScene = new InventoryScene(game, player);
-            inventoryScene.ShowInventory();
-            Console.WriteLine();
-            inventoryScene.PromptPotionSelection();
+            for (int i = 0; i < potion.Count; i++)
+            {
+                if (playerX == potion[i].x && playerY == potion[i].y)
+                {
+                    player.AddPotionToInventory(new Potion("초급 포션", 30));
+
+                    potion.RemoveAt(i);
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("초급포션을 획득했습니다! 인벤토리에 추가되었습니다.");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+
+                    break;
+                }
+            }
         }
+
+            public void UseInventory()
+            {
+                InventoryScene inventoryScene = new InventoryScene(game, player);
+                inventoryScene.ShowInventory();
+                Console.WriteLine();
+                inventoryScene.PromptPotionSelection();
+            }
     }
 }

@@ -5,7 +5,7 @@ namespace OOPConsoleProject.Scenes
 {
     public class BattleScene : Scene
     {
-        public enum State { Choice, CharAttack, PoketAttack, Escape}
+        public enum State { Choice, CharAttack, PoketAttack, Escape }
         private State curState;
 
         private string input;
@@ -75,19 +75,21 @@ namespace OOPConsoleProject.Scenes
                 Thread.Sleep(1000);
                 Console.WriteLine();
 
-                if (currentMonster.hp <= 0) 
+                if (currentMonster.hp <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine();
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
                     Console.ResetColor();
                     game.Player.Gold += 2000;
-                   // Console.WriteLine($"현재 골드: {game.Player.Gold}");
+                    // Console.WriteLine($"현재 골드: {game.Player.Gold}");
                     Console.Write("몬스터 처치 보상으로 ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("2000 Gold");
                     Console.ResetColor();
                     Console.WriteLine("를 획득하셨습니다.");
                     Console.WriteLine();
+                    
                     Console.WriteLine("[ 다음으로 넘어가려면 아무 키나 누르세요. ]");
                     game.EndBattle();
                 }
@@ -107,10 +109,11 @@ namespace OOPConsoleProject.Scenes
                     Console.WriteLine($"{game.Player.Name}의 남은 체력: {game.Player.CurHP}");
                     Console.WriteLine();
 
-                    if (game.Player.CurHP <= 0) 
+                    if (game.Player.CurHP <= 0)
                     {
                         game.Player.CurHP = 0;
                         Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine();
                         Console.WriteLine($"{game.Player.Name}이(가) 쓰러졌습니다!");
                         Console.ResetColor();
                         Thread.Sleep(2000);
@@ -144,6 +147,7 @@ namespace OOPConsoleProject.Scenes
                 {
                     currentMonster.hp = 0;
                     Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine();
                     Console.WriteLine($"{currentMonster.name}이 쓰러졌습니다!");
                     Console.ResetColor();
                     game.Player.Gold += 2000;
@@ -163,7 +167,7 @@ namespace OOPConsoleProject.Scenes
                     Console.ResetColor();
 
                     game.Player.CurHP -= currentMonster.attack;
-                    
+
                     if (game.Player.CurHP <= 0)
                     {
                         game.Player.CurHP = 0;
@@ -172,10 +176,11 @@ namespace OOPConsoleProject.Scenes
                     Console.WriteLine($"{game.Player.Name}의 남은 체력: {game.Player.CurHP}");
                     Console.WriteLine();
 
-                    if (game.Player.CurHP <= 0) 
+                    if (game.Player.CurHP <= 0)
                     {
                         game.Player.CurHP = 0;
                         Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine();
                         Console.WriteLine($"{game.Player.Name}이(가) 쓰러졌습니다!");
                         Console.ResetColor();
                         Thread.Sleep(2000);
@@ -226,7 +231,7 @@ namespace OOPConsoleProject.Scenes
                     Thread.Sleep(1000);
                     Console.WriteLine();
 
-                    Console.ForegroundColor= ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{currentMonster.name}이 반격했습니다!");
                     Thread.Sleep(1000);
                     Console.ResetColor();
@@ -240,10 +245,11 @@ namespace OOPConsoleProject.Scenes
 
                     Console.WriteLine($"{game.Player.Name}의 남은 체력: {game.Player.CurHP}");
 
-                    if (game.Player.CurHP <= 0) 
+                    if (game.Player.CurHP <= 0)
                     {
                         game.Player.CurHP = 0;
                         Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine();
                         Console.WriteLine($"{game.Player.Name}이(가) 쓰러졌습니다!");
                         Console.ResetColor();
                         Thread.Sleep(2000);

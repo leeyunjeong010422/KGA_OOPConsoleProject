@@ -19,6 +19,7 @@ namespace OOPConsoleProject
         private PoketMonster poketMonster;
         public PoketMonster PoketMonster { get { return poketMonster; } set { poketMonster = value; } }
 
+
         public Game()
         {
             
