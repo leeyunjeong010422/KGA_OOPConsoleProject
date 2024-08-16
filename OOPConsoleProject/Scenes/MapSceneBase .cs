@@ -220,6 +220,7 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
+        //몬스터 삭제 구현 X
         private void CheckForMonsterRemove()
         {
             for (int i = 0; i < monsters.Count; i++)
