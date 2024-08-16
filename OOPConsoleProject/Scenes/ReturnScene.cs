@@ -38,11 +38,11 @@
         {
             if (input == "1")
             {
-                game.ChangeScene(SceneType.Map);
+                game.ChangeScene(SceneType.Map1);
             }
             else if (input == "2")
             {
-                game.ChangeScene(SceneType.Map1);
+                game.ChangeScene(SceneType.Map2);
             }
         }
     }

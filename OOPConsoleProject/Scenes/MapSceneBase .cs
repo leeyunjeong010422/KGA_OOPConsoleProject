@@ -42,6 +42,8 @@ namespace OOPConsoleProject.Scenes
 
         protected abstract void CheckForGoal();
 
+        protected abstract void MapName();
+
         public override void Enter()
         {
             playerX = 1;
@@ -51,6 +53,8 @@ namespace OOPConsoleProject.Scenes
         public override void Render()
         {
             Console.Clear();
+
+            MapName();
 
             char[,] displayMaze = (char[,])maze.Clone();
 

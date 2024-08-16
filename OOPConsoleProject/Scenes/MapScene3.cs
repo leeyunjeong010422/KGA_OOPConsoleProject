@@ -60,5 +60,12 @@ namespace OOPConsoleProject.Scenes
                 }
             }
         }
+
+        protected override void MapName()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("<호연지방>");
+            Console.ResetColor();
+        }
     }
 }
