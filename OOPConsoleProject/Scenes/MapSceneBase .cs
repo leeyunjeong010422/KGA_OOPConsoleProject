@@ -97,6 +97,8 @@ namespace OOPConsoleProject.Scenes
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("[ 1번: 상점가기 | 2번: 인벤토리 (포션 먹기, 장비 착용 가능) ]");
             Console.ResetColor();

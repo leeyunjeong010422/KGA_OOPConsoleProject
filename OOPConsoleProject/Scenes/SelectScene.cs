@@ -47,7 +47,7 @@ namespace OOPConsoleProject.Scenes
             if (curState == State.Name)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("캐릭터의 이름을 입력하세요: ");
+                Console.Write("플레이 할 캐릭터의 이름을 입력하세요: ");
                 Console.ResetColor();
             }
             else if (curState == State.Job)
