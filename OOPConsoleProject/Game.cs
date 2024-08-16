@@ -19,7 +19,7 @@ namespace OOPConsoleProject
         private PoketMonster poketMonster;
         public PoketMonster PoketMonster { get { return poketMonster; } set { poketMonster = value; } }
 
-
+        private MusicPlayer Bgm;
         public Game()
         {
             
@@ -75,6 +75,11 @@ namespace OOPConsoleProject
         {
             player = new Player();
             poketMonster = new PoketMonster();
+
+            Bgm = new MusicPlayer(@"C:\Users\82108\Desktop\KIGA\Pokemon.mp3");
+            Bgm.Volume = 100;
+            Bgm.Loop = true;
+            Bgm.Play();
 
             isRunning = true;
 
