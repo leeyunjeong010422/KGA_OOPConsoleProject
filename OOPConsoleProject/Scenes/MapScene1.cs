@@ -44,11 +44,6 @@ namespace OOPConsoleProject.Scenes
             };
         }
 
-        public override void Exit()
-        {
-
-        }
-
         protected override void CheckForGoal()
         {
             foreach (var goal in goal)
@@ -66,6 +61,11 @@ namespace OOPConsoleProject.Scenes
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("<관동지방>");
             Console.ResetColor();
+        }
+
+        public override void Exit()
+        {
+
         }
     }
 }

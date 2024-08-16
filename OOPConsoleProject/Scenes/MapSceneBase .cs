@@ -218,10 +218,17 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        protected void CheckForMonsterRemove()
+        private void CheckForMonsterRemove()
         {
-            monsters.RemoveAll(m => m.x == playerX && m.y == playerY);
-        }   
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                if (playerX == monsters[i].x && playerY == monsters[i].y)
+                {
+                    monsters.RemoveAt(i);
+                    break;
+                }
+            }
+        }
 
         private void CheckForPotion()
         {
