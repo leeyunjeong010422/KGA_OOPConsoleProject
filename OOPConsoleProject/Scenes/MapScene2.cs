@@ -24,7 +24,7 @@ namespace OOPConsoleProject.Scenes
         {
             monsters = new List<(int x, int y)>
             {
-                (3, 3), (7, 5), (10, 3), (16, 5), (25, 2)
+                (6, 2), (16, 5), (20, 1), (25, 2), (33, 4)
             };
         }
 
@@ -40,7 +40,7 @@ namespace OOPConsoleProject.Scenes
         {
             potion = new List<(int x, int y)>
             {
-                (11, 3), (21,1)
+                (13, 1), (20, 4), (31, 2)
             };
         }
 
