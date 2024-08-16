@@ -105,8 +105,7 @@ namespace OOPConsoleProject.Scenes
                 }
                 else if (input == "3")
                 {
-                    //game.ChangeScene(SceneType.Return);
-                    game.EndBattle();
+                    game.ChangeScene(SceneType.Return);
                 }
             }
             else if (curState == State.PotionEffect)
