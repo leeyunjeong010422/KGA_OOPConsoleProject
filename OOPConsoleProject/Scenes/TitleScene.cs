@@ -35,19 +35,18 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine("           ♡。　＼　　｜　　／。　♡");
             Console.ResetColor();
             Console.WriteLine();
-            Console.WriteLine("           　  포켓몬스터 게임       ");
+            Console.WriteLine("             게임시작하기 (Enter) ");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("           ♡。　／　　｜　　＼。　♡");
             Console.WriteLine("           。　♡。 　　。　　♡。");
             Console.ResetColor();
             Console.WriteLine();
-            Console.WriteLine("    [ 게임을 시작하려면 아무키나 누르세요 ]     ");
         }
 
         public override void Update()
         {
-            game.ChangeScene(SceneType.Select);
+            game.ChangeScene(SceneType.GameIntroduction);
         }
     }
 }

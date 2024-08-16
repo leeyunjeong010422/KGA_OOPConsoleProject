@@ -80,6 +80,7 @@ namespace OOPConsoleProject
 
             scenes = new Scene[(int)SceneType.Size];
             scenes[(int)SceneType.Title] = new TitleScene(this);
+            scenes[(int)SceneType.GameIntroduction] = new GameIntroductionScene(this);
             scenes[(int)SceneType.Select] = new SelectScene(this, player);
             scenes[(int)SceneType.Map1] = new MapScene1(this, player);
             scenes[(int)SceneType.Map2] = new MapScene2(this, player);
