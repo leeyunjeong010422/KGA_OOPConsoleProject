@@ -40,7 +40,7 @@ namespace OOPConsoleProject
         }
 
         private Scene prevScene;
-        public void ChangeScene(SceneType sceneType)
+        public void ChangeScene(SceneType sceneType, MapData mapData = null)
         {
             if (curScene != null)
             {
@@ -48,6 +48,12 @@ namespace OOPConsoleProject
                 prevScene = curScene;
             }
             curScene = scenes[(int)sceneType];
+
+            if (curScene is MapScene mapScene && mapData != null)
+            {
+                mapScene.SetMapData(mapData);
+            }
+
             curScene.Enter();
         }
 
@@ -87,10 +93,7 @@ namespace OOPConsoleProject
             scenes[(int)SceneType.Title] = new TitleScene(this);
             scenes[(int)SceneType.GameIntroduction] = new GameIntroductionScene(this);
             scenes[(int)SceneType.Select] = new SelectScene(this, player);
-            scenes[(int)SceneType.Map1] = new MapScene1(this, player);
-            scenes[(int)SceneType.Map2] = new MapScene2(this, player);
-            scenes[(int)SceneType.Map3] = new MapScene3(this, player);
-            //scenes[(int)SceneType.Map4] = new MapScene3(this, player);
+            scenes[(int)SceneType.MapScene] = new MapScene(this, player);
             scenes[(int)SceneType.Battle] = new BattleScene(this);
             scenes[(int)SceneType.Inventory] = new InventoryScene(this, player);
             scenes[(int)SceneType.Shop] = new ShopScene(this, player);

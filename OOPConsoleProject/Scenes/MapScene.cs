@@ -1,48 +1,54 @@
 ﻿using OOPConsoleProject.Players;
-using OOPConsoleProject.VillainMonsters;
 
 namespace OOPConsoleProject.Scenes
 {
-    public abstract class MapSceneBase : Scene
+    public struct Point
     {
-        protected char[,] maze;
-        protected int playerX;
-        protected int playerY;
+        public int x;
+        public int y;
+    }
+    public class MapScene : Scene
+    {
+        private char[,] maze;
+        private int playerX;
+        private int playerY;
+        private List<(int x, int y)> monsters;
+        private List<(int x, int y)> goals;
+        private List<(int x, int y)> potions;
+        private Player player;
+        private string mapName;
+        private MapData mapData;
 
-        public class Point
+        private int currentMapIndex = 0;
+        private static readonly List<Func<MapData>> maps = new List<Func<MapData>>
         {
-            public int x;
-            public int y;
+            Maps.Map1,
+            Maps.Map2,
+            Maps.Map3
+        };
+
+        public MapScene(Game game, Player player) : base(game)
+        {
+            this.player = player;
+            LoadMap(currentMapIndex);
         }
 
-        protected List<(int x, int y)> monsters;
-        protected List<(int x, int y)> goal;
-        protected List<(int x, int y)> potion;
-        protected Player player;
-
-        public MapSceneBase(Game game, Player player) : base(game)
+        public void SetMapData(MapData data)
         {
-            InitializeMaze();
-            InitializeMonsters();
-            InitializeGoal();
-            InitializePotion();
+            mapData = data;
+        }
 
+        private void LoadMap(int index)
+        {
+            var mapData = maps[index]();
+            this.maze = mapData.Maze;
+            this.monsters = mapData.Monsters;
+            this.goals = mapData.Goals;
+            this.potions = mapData.Potions;
+            this.mapName = mapData.MapName;
             playerX = 1;
             playerY = 1;
-            this.player = player;
         }
-
-        protected abstract void InitializeMaze(); 
-
-        protected abstract void InitializeMonsters(); 
-
-        protected abstract void InitializeGoal(); 
-
-        protected abstract void InitializePotion();
-
-        protected abstract void CheckForGoal();
-
-        protected abstract void MapName();
 
         public override void Enter()
         {
@@ -54,11 +60,13 @@ namespace OOPConsoleProject.Scenes
         {
             Console.Clear();
 
-            MapName();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(mapName);
+            Console.ResetColor();
 
             char[,] displayMaze = (char[,])maze.Clone();
 
-            foreach (var p in potion)
+            foreach (var p in potions)
             {
                 displayMaze[p.y, p.x] = 'X';
             }
@@ -92,7 +100,7 @@ namespace OOPConsoleProject.Scenes
                     }
                     else
                     {
-                        Console.Write(maze[i, j] + " ");
+                        Console.Write(displayMaze[i, j] + " ");
                     }
                 }
                 Console.WriteLine();
@@ -220,28 +228,45 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        //몬스터 삭제 구현 X
-        private void CheckForMonsterRemove()
+        protected virtual void CheckForGoal()
         {
-            for (int i = 0; i < monsters.Count; i++)
+            foreach (var goal in goals)
             {
-                if (playerX == monsters[i].x && playerY == monsters[i].y)
+                if (playerX == goal.x && playerY == goal.y)
                 {
-                    monsters.RemoveAt(i);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{mapName} 탈출에 성공하였습니다!");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                    LoadNextMap();
                     break;
                 }
             }
         }
 
+        private void LoadNextMap()
+        {
+            currentMapIndex++;
+            if (currentMapIndex < maps.Count)
+            {
+                LoadMap(currentMapIndex);
+            }
+            else
+            {
+                Console.WriteLine("모든 맵을 클리어했습니다!");
+                game.ChangeScene(SceneType.Clear);
+            }
+        }
+
         private void CheckForPotion()
         {
-            for (int i = 0; i < potion.Count; i++)
+            for (int i = 0; i < potions.Count; i++)
             {
-                if (playerX == potion[i].x && playerY == potion[i].y)
+                if (playerX == potions[i].x && playerY == potions[i].y)
                 {
                     player.AddPotionToInventory(new Potion("초급 포션", 30));
 
-                    potion.RemoveAt(i);
+                    potions.RemoveAt(i);
 
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("초급포션을 획득했습니다! 인벤토리에 추가되었습니다.");
@@ -253,12 +278,9 @@ namespace OOPConsoleProject.Scenes
             }
         }
 
-        public void UseInventory()
+        public override void Exit()
         {
-            InventoryScene inventoryScene = new InventoryScene(game, player);
-            inventoryScene.ShowInventory();
-            Console.WriteLine();
-            inventoryScene.PromptPotionSelection();
+
         }
     }
 }
