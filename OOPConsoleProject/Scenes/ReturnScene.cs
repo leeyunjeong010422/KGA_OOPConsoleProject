@@ -26,8 +26,8 @@
         public override void Render()
         {
             Console.Clear();
-            Console.WriteLine(" 마을로 돌아가시겠습니까? ");
-            Console.WriteLine(" 이전 마을로 이동하게 됩니다. ");
+            Console.WriteLine("마을로 돌아가시겠습니까? ");
+            Console.WriteLine("이전 마을로 이동하게 됩니다. ");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("[ 1. 네 | 2. 아니오(인벤토리로 돌아가게 됩니다.) ]: ");
